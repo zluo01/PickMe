@@ -15,6 +15,9 @@
 		51C7C9DE21A25968008E7CF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */; };
 		51C7C9E921A25968008E7CF1 /* PickMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9E821A25968008E7CF1 /* PickMeTests.swift */; };
 		51C7C9F421A25968008E7CF1 /* PickMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9F321A25968008E7CF1 /* PickMeUITests.swift */; };
+		54190B18E26B73271C4F77B4 /* Pods_PickMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */; };
+		8C5AA0BDB8AF125644152ECB /* Pods_PickMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */; };
+		9140D840854732857EAFF0BC /* Pods_PickMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D85920FE6CEAD30E9685C3B /* Pods-PickMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.release.xcconfig"; sourceTree = "<group>"; };
 		27A3238921A25B9300580120 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4335F206BF8559DAE005C3D2 /* Pods-PickMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.debug.xcconfig"; sourceTree = "<group>"; };
 		51C7C9D021A25967008E7CF1 /* PickMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C7C9D321A25967008E7CF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C7C9D521A25967008E7CF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		51C7C9EF21A25968008E7CF1 /* PickMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C7C9F321A25968008E7CF1 /* PickMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMeUITests.swift; sourceTree = "<group>"; };
 		51C7C9F521A25968008E7CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61462861C3C34250DB269093 /* Pods-PickMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		7D3DBD4F0396C8FBA51ED3F0 /* Pods-PickMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeUITests/Pods-PickMeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B4C2ACDE87DAAD2D660AAA5B /* Pods-PickMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeUITests/Pods-PickMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0CB5097ED0D10E58BDA872 /* Pods-PickMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5AA0BDB8AF125644152ECB /* Pods_PickMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54190B18E26B73271C4F77B4 /* Pods_PickMeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9140D840854732857EAFF0BC /* Pods_PickMeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BD41C200432679E28C00EAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */,
+				FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */,
+				3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		51C7C9C721A25967008E7CF1 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				51C7C9E721A25968008E7CF1 /* PickMeTests */,
 				51C7C9F221A25968008E7CF1 /* PickMeUITests */,
 				51C7C9D121A25967008E7CF1 /* Products */,
+				543C2846C53EDFB34B75C60A /* Pods */,
+				4BD41C200432679E28C00EAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +155,19 @@
 			path = PickMeUITests;
 			sourceTree = "<group>";
 		};
+		543C2846C53EDFB34B75C60A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4335F206BF8559DAE005C3D2 /* Pods-PickMe.debug.xcconfig */,
+				0D85920FE6CEAD30E9685C3B /* Pods-PickMe.release.xcconfig */,
+				DE0CB5097ED0D10E58BDA872 /* Pods-PickMeTests.debug.xcconfig */,
+				61462861C3C34250DB269093 /* Pods-PickMeTests.release.xcconfig */,
+				B4C2ACDE87DAAD2D660AAA5B /* Pods-PickMeUITests.debug.xcconfig */,
+				7D3DBD4F0396C8FBA51ED3F0 /* Pods-PickMeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51C7C9F821A25968008E7CF1 /* Build configuration list for PBXNativeTarget "PickMe" */;
 			buildPhases = (
+				200454CE91E42340257104CB /* [CP] Check Pods Manifest.lock */,
 				51C7C9CC21A25967008E7CF1 /* Sources */,
 				51C7C9CD21A25967008E7CF1 /* Frameworks */,
 				51C7C9CE21A25967008E7CF1 /* Resources */,
+				882C1F53C7A45135F9F9B3FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51C7C9FB21A25968008E7CF1 /* Build configuration list for PBXNativeTarget "PickMeTests" */;
 			buildPhases = (
+				8B57EB90740C43E74C46FC95 /* [CP] Check Pods Manifest.lock */,
 				51C7C9E021A25968008E7CF1 /* Sources */,
 				51C7C9E121A25968008E7CF1 /* Frameworks */,
 				51C7C9E221A25968008E7CF1 /* Resources */,
@@ -170,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51C7C9FE21A25968008E7CF1 /* Build configuration list for PBXNativeTarget "PickMeUITests" */;
 			buildPhases = (
+				0BABBA9C629A49BFB505574D /* [CP] Check Pods Manifest.lock */,
 				51C7C9EB21A25968008E7CF1 /* Sources */,
 				51C7C9EC21A25968008E7CF1 /* Frameworks */,
 				51C7C9ED21A25968008E7CF1 /* Resources */,
@@ -254,6 +298,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BABBA9C629A49BFB505574D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PickMeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		200454CE91E42340257104CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PickMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		882C1F53C7A45135F9F9B3FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PickMe/Pods-PickMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickMe/Pods-PickMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B57EB90740C43E74C46FC95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PickMeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		51C7C9CC21A25967008E7CF1 /* Sources */ = {
@@ -432,6 +569,7 @@
 		};
 		51C7C9F921A25968008E7CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4335F206BF8559DAE005C3D2 /* Pods-PickMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +588,7 @@
 		};
 		51C7C9FA21A25968008E7CF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D85920FE6CEAD30E9685C3B /* Pods-PickMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +607,7 @@
 		};
 		51C7C9FC21A25968008E7CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE0CB5097ED0D10E58BDA872 /* Pods-PickMeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +629,7 @@
 		};
 		51C7C9FD21A25968008E7CF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61462861C3C34250DB269093 /* Pods-PickMeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +651,7 @@
 		};
 		51C7C9FF21A25968008E7CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4C2ACDE87DAAD2D660AAA5B /* Pods-PickMeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +672,7 @@
 		};
 		51C7CA0021A25968008E7CF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D3DBD4F0396C8FBA51ED3F0 /* Pods-PickMeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
