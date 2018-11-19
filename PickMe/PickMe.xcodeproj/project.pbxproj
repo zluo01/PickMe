@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27A3238A21A25B9300580120 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27A3238921A25B9300580120 /* GoogleService-Info.plist */; };
 		51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D321A25967008E7CF1 /* AppDelegate.swift */; };
 		51C7C9D621A25967008E7CF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D521A25967008E7CF1 /* ViewController.swift */; };
 		51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9D721A25967008E7CF1 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27A3238921A25B9300580120 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51C7C9D021A25967008E7CF1 /* PickMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C7C9D321A25967008E7CF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C7C9D521A25967008E7CF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				51C7C9DA21A25968008E7CF1 /* Assets.xcassets */,
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
+				27A3238921A25B9300580120 /* GoogleService-Info.plist */,
 			);
 			path = PickMe;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C7C9DE21A25968008E7CF1 /* LaunchScreen.storyboard in Resources */,
+				27A3238A21A25B9300580120 /* GoogleService-Info.plist in Resources */,
 				51C7C9DB21A25968008E7CF1 /* Assets.xcassets in Resources */,
 				51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */,
 			);
