@@ -1,2 +1,2 @@
 # PickMe
-Dating App for dump ass single dog
+Sorry my friend
