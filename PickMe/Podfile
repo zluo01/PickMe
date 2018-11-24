@@ -6,8 +6,8 @@ target 'PickMe' do
   use_frameworks!
 
   # Pods for PickMe
-  # pod 'Firebase/Core'
-  pod 'Firebase', '>= 2.5.0'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
   target 'PickMeTests' do
     inherit! :search_paths
