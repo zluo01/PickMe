@@ -64,9 +64,8 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
         }
         
         let course_id = Array(displayCourses.keys).sorted()[indexPath.row]
-        myCell?.textLabel!.text =  course_id + " - " + displayCourses[course_id]!["title"]!
-        // modify here to display whether it is a required course or a selective
-        //        myCell?.detailTextLabel?.text = courses[indexPath.row]
+        myCell?.textLabel!.text =  course_id
+        myCell?.detailTextLabel?.text = " - " + displayCourses[course_id]!["title"]!
         
         return myCell!
     }
