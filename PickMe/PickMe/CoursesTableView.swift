@@ -64,7 +64,9 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let destination = segue.destination as! SingleCourseDetails
-        destination.course = courseSeletced
+
+        destination.details = courses[courseSeletced]
+        //destination.course = courseSeletced
         
     }
     

@@ -109,19 +109,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opH-rY-aeo">
-                                <rect key="frame" x="166" y="323" width="41" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XE-Fc-Fp2">
+                                <rect key="frame" x="30" y="119" width="315" height="39.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="course Id">
+                                        <attributes>
+                                            <font key="NSFont" size="36" name="MarkerFelt-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXn-2G-OOy">
+                                <rect key="frame" x="30" y="207.5" width="315" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="course title">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="MarkerFelt-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1z9-d8-DOn">
+                                <rect key="frame" x="30" y="325.5" width="315" height="195.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-vM-166">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="oKJ-vM-166" secondAttribute="bottom" constant="184" placeholder="YES" id="7cv-MJ-mGz"/>
+                                    <constraint firstAttribute="trailing" secondItem="oKJ-vM-166" secondAttribute="trailing" id="Nz2-nn-SPT"/>
+                                    <constraint firstItem="oKJ-vM-166" firstAttribute="width" secondItem="1z9-d8-DOn" secondAttribute="width" id="O2S-nJ-bab"/>
+                                    <constraint firstItem="oKJ-vM-166" firstAttribute="leading" secondItem="1z9-d8-DOn" secondAttribute="leading" id="VjK-Pp-yCQ"/>
+                                    <constraint firstItem="oKJ-vM-166" firstAttribute="top" secondItem="1z9-d8-DOn" secondAttribute="top" id="etK-8I-aK0"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.63137254899999995" green="0.94117647059999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2VJ-KB-qBB" firstAttribute="trailing" secondItem="zXn-2G-OOy" secondAttribute="trailing" constant="30" id="Hpt-Cs-kih"/>
+                            <constraint firstItem="zXn-2G-OOy" firstAttribute="top" secondItem="9XE-Fc-Fp2" secondAttribute="bottom" constant="49" id="P7J-lp-CQ0"/>
+                            <constraint firstItem="9XE-Fc-Fp2" firstAttribute="leading" secondItem="2VJ-KB-qBB" secondAttribute="leading" constant="30" id="PMB-su-G3p"/>
+                            <constraint firstItem="zXn-2G-OOy" firstAttribute="leading" secondItem="2VJ-KB-qBB" secondAttribute="leading" constant="30" id="QlW-CI-XnO"/>
+                            <constraint firstItem="1z9-d8-DOn" firstAttribute="leading" secondItem="2VJ-KB-qBB" secondAttribute="leading" constant="30" id="a5E-dH-vRO"/>
+                            <constraint firstItem="1z9-d8-DOn" firstAttribute="top" secondItem="zXn-2G-OOy" secondAttribute="bottom" constant="98.5" id="aZS-aC-nbK"/>
+                            <constraint firstItem="9XE-Fc-Fp2" firstAttribute="top" secondItem="2VJ-KB-qBB" secondAttribute="top" constant="55" id="avB-JU-BLS"/>
+                            <constraint firstItem="2VJ-KB-qBB" firstAttribute="trailing" secondItem="1z9-d8-DOn" secondAttribute="trailing" constant="30" id="j0I-81-ckM"/>
+                            <constraint firstItem="2VJ-KB-qBB" firstAttribute="trailing" secondItem="9XE-Fc-Fp2" secondAttribute="trailing" constant="30" id="vdb-YY-3cJ"/>
+                            <constraint firstItem="2VJ-KB-qBB" firstAttribute="bottom" secondItem="1z9-d8-DOn" secondAttribute="bottom" constant="97" id="z9k-w3-VEr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2VJ-KB-qBB"/>
                     </view>
                     <connections>
-                        <outlet property="forTEST" destination="opH-rY-aeo" id="bwL-d9-9cI"/>
+                        <outlet property="courseDes" destination="oKJ-vM-166" id="cu4-rg-0E7"/>
+                        <outlet property="courseId" destination="9XE-Fc-Fp2" id="3SC-DR-qsB"/>
+                        <outlet property="courseTitle" destination="zXn-2G-OOy" id="PM4-ka-ceA"/>
+                        <outlet property="scrollView" destination="1z9-d8-DOn" id="ZhR-wo-ePm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qy-D0-5Ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
