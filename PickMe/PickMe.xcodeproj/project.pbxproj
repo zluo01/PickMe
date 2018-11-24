@@ -17,6 +17,8 @@
 		51C7C9F421A25968008E7CF1 /* PickMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9F321A25968008E7CF1 /* PickMeUITests.swift */; };
 		54190B18E26B73271C4F77B4 /* Pods_PickMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */; };
 		849B6AA421A5EB1F008A588A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA321A5EB1F008A588A /* Utils.swift */; };
+		849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA721A8E7FE008A588A /* MajorsTableView.swift */; };
+		849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA921A8ECC9008A588A /* CoursesTableView.swift */; };
 		8C5AA0BDB8AF125644152ECB /* Pods_PickMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */; };
 		9140D840854732857EAFF0BC /* Pods_PickMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		61462861C3C34250DB269093 /* Pods-PickMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D3DBD4F0396C8FBA51ED3F0 /* Pods-PickMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeUITests/Pods-PickMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		849B6AA321A5EB1F008A588A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		849B6AA721A8E7FE008A588A /* MajorsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorsTableView.swift; sourceTree = "<group>"; };
+		849B6AA921A8ECC9008A588A /* CoursesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableView.swift; sourceTree = "<group>"; };
 		B4C2ACDE87DAAD2D660AAA5B /* Pods-PickMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeUITests/Pods-PickMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0CB5097ED0D10E58BDA872 /* Pods-PickMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +135,8 @@
 				51C7C9D321A25967008E7CF1 /* AppDelegate.swift */,
 				849B6AA321A5EB1F008A588A /* Utils.swift */,
 				51C7C9D521A25967008E7CF1 /* ViewController.swift */,
+				849B6AA721A8E7FE008A588A /* MajorsTableView.swift */,
+				849B6AA921A8ECC9008A588A /* CoursesTableView.swift */,
 				51C7C9D721A25967008E7CF1 /* Main.storyboard */,
 				51C7C9DA21A25968008E7CF1 /* Assets.xcassets */,
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
@@ -385,8 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C7C9D621A25967008E7CF1 /* ViewController.swift in Sources */,
+				849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */,
 				51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */,
 				849B6AA421A5EB1F008A588A /* Utils.swift in Sources */,
+				849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
