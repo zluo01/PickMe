@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Majors Table View-->
+        <!--Majors-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MajorsTableView" customModule="PickMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gbg-iX-EXc"/>
+                    <navigationItem key="navigationItem" title="Majors" id="gbg-iX-EXc"/>
                     <connections>
                         <outlet property="majorsTable" destination="Dei-Zy-fVs" id="eBN-lo-iQd"/>
                         <segue destination="Mbs-eW-wmF" kind="show" identifier="MajorToCourses" id="4Me-ef-4Mx"/>
@@ -43,6 +43,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="nTb-1s-4va" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vt8-W0-4T5">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -57,7 +58,6 @@
         <!--Item-->
         <scene sceneID="bIA-UQ-2t2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="inw-yo-DN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KNI-AF-Wlj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="GXy-FK-RTh"/>
                     <toolbarItems/>
@@ -70,10 +70,11 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MbA-qU-lI2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="inw-yo-DN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="118.29085457271366"/>
         </scene>
-        <!--Courses Table View-->
+        <!--Courses-->
         <scene sceneID="rN5-Oh-xXc">
             <objects>
                 <viewController id="Mbs-eW-wmF" customClass="CoursesTableView" customModule="PickMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,7 +91,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="c6B-ER-bfD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jmd-oq-xoj"/>
+                    <navigationItem key="navigationItem" title="Courses" id="jmd-oq-xoj"/>
                     <connections>
                         <outlet property="coursesTable" destination="74v-ZM-wU6" id="204-U6-IOk"/>
                         <segue destination="nxc-iK-i1f" kind="show" identifier="CoursesToCourse" id="ydq-hx-jIx"/>

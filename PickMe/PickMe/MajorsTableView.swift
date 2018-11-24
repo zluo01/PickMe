@@ -42,11 +42,8 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         if myCell == nil {
             myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "theCell")
         }
-        
         myCell?.textLabel!.text = Array(majors.keys).sorted()[indexPath.row]
-        
         return myCell!
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
