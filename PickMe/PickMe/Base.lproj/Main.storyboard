@@ -18,17 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dei-Zy-fVs">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dei-Zy-fVs">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Dw8-Io-Gs1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dei-Zy-fVs" firstAttribute="top" secondItem="Dw8-Io-Gs1" secondAttribute="bottom" id="55d-hA-rug"/>
+                            <constraint firstItem="Dw8-Io-Gs1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6v4-mx-UZl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dw8-Io-Gs1" secondAttribute="trailing" id="6wN-fP-aB3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dei-Zy-fVs" secondAttribute="bottom" id="ZMZ-9M-oRu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dei-Zy-fVs" secondAttribute="trailing" id="atb-Hn-5Ix"/>
+                            <constraint firstItem="Dei-Zy-fVs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g92-9D-mKW"/>
+                            <constraint firstItem="Dw8-Io-Gs1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jlP-11-HHh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Majors" id="gbg-iX-EXc"/>
                     <connections>
+                        <outlet property="majorSearch" destination="Dw8-Io-Gs1" id="zUx-xx-Ox9"/>
                         <outlet property="majorsTable" destination="Dei-Zy-fVs" id="eBN-lo-iQd"/>
                         <segue destination="Mbs-eW-wmF" kind="show" identifier="MajorToCourses" id="4Me-ef-4Mx"/>
                     </connections>
@@ -82,24 +95,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="74v-ZM-wU6">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kxz-RH-tr7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="74v-ZM-wU6">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c6B-ER-bfD" firstAttribute="bottom" secondItem="74v-ZM-wU6" secondAttribute="bottom" id="0jX-M0-nEI"/>
+                            <constraint firstItem="74v-ZM-wU6" firstAttribute="leading" secondItem="c6B-ER-bfD" secondAttribute="leading" id="6Tm-j9-SEZ"/>
+                            <constraint firstItem="kxz-RH-tr7" firstAttribute="leading" secondItem="c6B-ER-bfD" secondAttribute="leading" id="9Gn-mH-myb"/>
+                            <constraint firstItem="74v-ZM-wU6" firstAttribute="top" secondItem="kxz-RH-tr7" secondAttribute="bottom" id="JVr-cB-mxH"/>
+                            <constraint firstItem="c6B-ER-bfD" firstAttribute="trailing" secondItem="kxz-RH-tr7" secondAttribute="trailing" id="WtY-kB-joO"/>
+                            <constraint firstItem="c6B-ER-bfD" firstAttribute="trailing" secondItem="74v-ZM-wU6" secondAttribute="trailing" id="iNJ-aD-fJr"/>
+                            <constraint firstItem="kxz-RH-tr7" firstAttribute="top" secondItem="c6B-ER-bfD" secondAttribute="top" id="u4n-FC-ESU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="c6B-ER-bfD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Courses" id="jmd-oq-xoj"/>
                     <connections>
                         <outlet property="coursesTable" destination="74v-ZM-wU6" id="204-U6-IOk"/>
+                        <outlet property="searchBar" destination="kxz-RH-tr7" id="q1L-Fo-ExZ"/>
                         <segue destination="nxc-iK-i1f" kind="show" identifier="CoursesToCourse" id="ydq-hx-jIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjr-8O-Dx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="118"/>
+            <point key="canvasLocation" x="2868" y="117.39130434782609"/>
         </scene>
         <!--Single Course Details-->
         <scene sceneID="rx6-GF-zWv">
