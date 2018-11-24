@@ -16,7 +16,6 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet weak var majorSearch: UISearchBar!
     
     var majors = Dictionary<String, Dictionary<String, Dictionary<String, String>>>()
-    
     var majorSeletced : String!
     
     override func viewDidLoad() {
@@ -59,7 +58,6 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! CoursesTableView
-        destination.major = majorSeletced
         destination.courses = majors[majorSeletced]!
     }
     
@@ -84,14 +82,4 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
             self.majorsTable.reloadData()
         })
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }

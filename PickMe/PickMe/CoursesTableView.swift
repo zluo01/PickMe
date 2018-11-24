@@ -17,12 +17,10 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
     
     var courses : [String: [String: String]] = [:]
     var displayCourses : [String: [String: String]] = [:]
-    var major : String!
     var courseSeletced : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         coursesTable.dataSource = self
         coursesTable.delegate = self
@@ -56,7 +54,6 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         var myCell = tableView.dequeueReusableCell(withIdentifier: "theCell")
         
         if myCell == nil {
@@ -76,22 +73,7 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let destination = segue.destination as! SingleCourseDetails
-
         destination.details = courses[courseSeletced]
-        //destination.course = courseSeletced
-        
-    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    } 
 }
