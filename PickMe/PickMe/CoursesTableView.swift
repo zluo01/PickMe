@@ -6,16 +6,33 @@
 //  Copyright © 2018 z.luo. All rights reserved.
 //
 
+// This table view aims to display the courses.
+
 import UIKit
 
 class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var coursesTable: UITableView!
     
+    var courses : [String] = []
+    
+    var major : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        coursesTable.dataSource = self
+        coursesTable.delegate = self
+        
+        modifyCourses()
+    }
+    
+    func modifyCourses(){
+        
+        // modify the courses array here
+        courses.append(major) // this is for test
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +41,38 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return courses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        var myCell = tableView.dequeueReusableCell(withIdentifier: "theCell")
+        
+        if myCell == nil {
+            myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "theCell")
+        }
+        print(courses)
+        print(courses[indexPath.row])
+        myCell?.textLabel!.text = courses[indexPath.row]
+        // modify here to display whether it is a required course or a selective
+        myCell?.detailTextLabel?.text = courses[indexPath.row]
+        
+        return myCell!
     }
 
+    var courseSeletced : String!
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        courseSeletced = courses[indexPath.row]
+        self.performSegue(withIdentifier: "CoursesToCourse", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destination = segue.destination as! SingleCourseDetails
+        destination.course = courseSeletced
         
     }
     
