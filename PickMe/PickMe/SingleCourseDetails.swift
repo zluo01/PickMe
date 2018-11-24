@@ -10,16 +10,32 @@ import UIKit
 
 class SingleCourseDetails: UIViewController {
     
-    @IBOutlet weak var forTEST: UILabel!
+    @IBOutlet weak var courseId: UILabel!
+    @IBOutlet weak var courseTitle: UILabel!
+    @IBOutlet weak var courseDes: UILabel!
     
-    var course : String!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    //var course : String!
+    var details : [String: String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        forTEST.text = course
+        
+        
+        courseId.text = details["course_code"]
+        courseTitle.text = details["title"]
+        courseDes.text = details["description"]
+        
+        courseId.sizeToFit()
+        courseTitle.sizeToFit()
+        courseDes.sizeToFit()
+        
+        scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: courseDes.bottomAnchor).isActive = true
+        
         
     }
 
