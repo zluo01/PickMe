@@ -14,26 +14,23 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
     
     @IBOutlet weak var coursesTable: UITableView!
     
-    var courses : [String] = []
-    
+    var courses : [String: [String: String]] = [:]
     var major : String!
+    var courseSeletced : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         coursesTable.dataSource = self
         coursesTable.delegate = self
-        
-        modifyCourses()
     }
     
-    func modifyCourses(){
-        
-        // modify the courses array here
-        courses.append(major) // this is for test
-    }
+//    func modifyCourses(){
+//
+//        // modify the courses array here
+//        courses.append(major) // this is for test
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,22 +48,17 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
         if myCell == nil {
             myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "theCell")
         }
-        print(courses)
-        print(courses[indexPath.row])
-        myCell?.textLabel!.text = courses[indexPath.row]
+
+        myCell?.textLabel!.text = Array(courses.keys).sorted()[indexPath.row]
         // modify here to display whether it is a required course or a selective
-        myCell?.detailTextLabel?.text = courses[indexPath.row]
+//        myCell?.detailTextLabel?.text = courses[indexPath.row]
         
         return myCell!
     }
-
-    var courseSeletced : String!
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        courseSeletced = courses[indexPath.row]
+        courseSeletced = Array(courses.keys).sorted()[indexPath.row]
         self.performSegue(withIdentifier: "CoursesToCourse", sender: self)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27A3238A21A25B9300580120 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27A3238921A25B9300580120 /* GoogleService-Info.plist */; };
 		51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D321A25967008E7CF1 /* AppDelegate.swift */; };
 		51C7C9D621A25967008E7CF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D521A25967008E7CF1 /* ViewController.swift */; };
 		51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9D721A25967008E7CF1 /* Main.storyboard */; };
@@ -16,7 +15,6 @@
 		51C7C9E921A25968008E7CF1 /* PickMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9E821A25968008E7CF1 /* PickMeTests.swift */; };
 		51C7C9F421A25968008E7CF1 /* PickMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9F321A25968008E7CF1 /* PickMeUITests.swift */; };
 		54190B18E26B73271C4F77B4 /* Pods_PickMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */; };
-		849B6AA421A5EB1F008A588A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA321A5EB1F008A588A /* Utils.swift */; };
 		849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA721A8E7FE008A588A /* MajorsTableView.swift */; };
 		849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA921A8ECC9008A588A /* CoursesTableView.swift */; };
 		849B6AAC21A8FEFD008A588A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849B6AAB21A8FEFD008A588A /* GoogleService-Info.plist */; };
@@ -44,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		0D85920FE6CEAD30E9685C3B /* Pods-PickMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.release.xcconfig"; sourceTree = "<group>"; };
-		27A3238921A25B9300580120 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4335F206BF8559DAE005C3D2 /* Pods-PickMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.debug.xcconfig"; sourceTree = "<group>"; };
 		51C7C9D021A25967008E7CF1 /* PickMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +59,6 @@
 		51C7C9F521A25968008E7CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61462861C3C34250DB269093 /* Pods-PickMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D3DBD4F0396C8FBA51ED3F0 /* Pods-PickMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeUITests/Pods-PickMeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		849B6AA321A5EB1F008A588A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		849B6AA721A8E7FE008A588A /* MajorsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorsTableView.swift; sourceTree = "<group>"; };
 		849B6AA921A8ECC9008A588A /* CoursesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableView.swift; sourceTree = "<group>"; };
 		849B6AAB21A8FEFD008A588A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -137,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				51C7C9D321A25967008E7CF1 /* AppDelegate.swift */,
-				849B6AA321A5EB1F008A588A /* Utils.swift */,
 				51C7C9D521A25967008E7CF1 /* ViewController.swift */,
 				849B6AA721A8E7FE008A588A /* MajorsTableView.swift */,
 				849B6AA921A8ECC9008A588A /* CoursesTableView.swift */,
@@ -147,7 +142,6 @@
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
 				849B6AAB21A8FEFD008A588A /* GoogleService-Info.plist */,
-				27A3238921A25B9300580120 /* GoogleService-Info.plist */,
 			);
 			path = PickMe;
 			sourceTree = "<group>";
@@ -292,7 +286,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C7C9DE21A25968008E7CF1 /* LaunchScreen.storyboard in Resources */,
-				27A3238A21A25B9300580120 /* GoogleService-Info.plist in Resources */,
 				849B6AAC21A8FEFD008A588A /* GoogleService-Info.plist in Resources */,
 				51C7C9DB21A25968008E7CF1 /* Assets.xcassets in Resources */,
 				51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */,
@@ -403,7 +396,6 @@
 				849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */,
 				51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */,
 				849B6AAE21A90041008A588A /* SingleCourseDetails.swift in Sources */,
-				849B6AA421A5EB1F008A588A /* Utils.swift in Sources */,
 				849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
