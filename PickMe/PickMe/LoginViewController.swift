@@ -31,7 +31,11 @@ class LoginViewController: UIViewController {
     @IBAction func loginAction(_ sender: UIButton) {
         Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!){(user, error) in
             if user != nil {
-                print("User has signed In!")
+                let alertController = UIAlertController(title: "Login Successful!", message: "You have successfully logged in!", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+                self.present(alertController, animated: true, completion: nil)
+                print("User has signed up!")
             }
             if error != nil{
                 print("error detected!")

@@ -34,6 +34,10 @@ class RegisterViewController: UIViewController {
         else {
             Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!){(user, error) in
                 if user != nil {
+                    let alertController = UIAlertController(title: "Register Success!", message: "You have successfully registered!", preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion: nil)
                     print("User has signed up!")
                 }
                 if error != nil{
@@ -48,6 +52,12 @@ class RegisterViewController: UIViewController {
                             break
                         case .emailAlreadyInUse:
                             let alertController = UIAlertController(title: "Email Already Existed", message: "Please use another email to register", preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alertController.addAction(cancelAction)
+                            self.present(alertController, animated: true, completion: nil)
+                            break
+                        case .weakPassword:
+                            let alertController = UIAlertController(title: "Password Not Strong Enough", message: "Please provide a stronger password", preferredStyle: .alert)
                             let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                             alertController.addAction(cancelAction)
                             self.present(alertController, animated: true, completion: nil)
