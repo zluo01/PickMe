@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27E4D52321AAFF65002756AF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4D52221AAFF65002756AF /* MainViewController.swift */; };
+		27E4D52321AAFF65002756AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4D52221AAFF65002756AF /* LoginViewController.swift */; };
 		51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D321A25967008E7CF1 /* AppDelegate.swift */; };
 		51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9D721A25967008E7CF1 /* Main.storyboard */; };
 		51C7C9DB21A25968008E7CF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9DA21A25968008E7CF1 /* Assets.xcassets */; };
@@ -21,6 +21,8 @@
 		849B6AB221A9123B008A588A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849B6AB121A9123B008A588A /* GoogleService-Info.plist */; };
 		8C5AA0BDB8AF125644152ECB /* Pods_PickMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */; };
 		9140D840854732857EAFF0BC /* Pods_PickMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */; };
+		FFADFB6121AB1C9D001194C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6021AB1C9D001194C9 /* RegisterViewController.swift */; };
+		FFADFB6321AB1D3D001194C9 /* ProfileOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		0D85920FE6CEAD30E9685C3B /* Pods-PickMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.release.xcconfig"; sourceTree = "<group>"; };
-		27E4D52221AAFF65002756AF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		27E4D52221AAFF65002756AF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4335F206BF8559DAE005C3D2 /* Pods-PickMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.debug.xcconfig"; sourceTree = "<group>"; };
 		51C7C9D021A25967008E7CF1 /* PickMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,8 @@
 		DE0CB5097ED0D10E58BDA872 /* Pods-PickMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFADFB6021AB1C9D001194C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				51C7C9D321A25967008E7CF1 /* AppDelegate.swift */,
-				27E4D52221AAFF65002756AF /* MainViewController.swift */,
+				27E4D52221AAFF65002756AF /* LoginViewController.swift */,
+				FFADFB6021AB1C9D001194C9 /* RegisterViewController.swift */,
 				849B6AA721A8E7FE008A588A /* MajorsTableView.swift */,
 				849B6AA921A8ECC9008A588A /* CoursesTableView.swift */,
 				849B6AAD21A90041008A588A /* SingleCourseDetails.swift */,
@@ -142,6 +147,7 @@
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
 				849B6AB121A9123B008A588A /* GoogleService-Info.plist */,
+				FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */,
 			);
 			path = PickMe;
 			sourceTree = "<group>";
@@ -395,10 +401,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */,
+				FFADFB6321AB1D3D001194C9 /* ProfileOptionViewController.swift in Sources */,
 				51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */,
 				849B6AAE21A90041008A588A /* SingleCourseDetails.swift in Sources */,
+				FFADFB6121AB1C9D001194C9 /* RegisterViewController.swift in Sources */,
 				849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */,
-				27E4D52321AAFF65002756AF /* MainViewController.swift in Sources */,
+				27E4D52321AAFF65002756AF /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
