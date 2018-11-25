@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27E4D52321AAFF65002756AF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4D52221AAFF65002756AF /* MainViewController.swift */; };
 		51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D321A25967008E7CF1 /* AppDelegate.swift */; };
 		51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9D721A25967008E7CF1 /* Main.storyboard */; };
 		51C7C9DB21A25968008E7CF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9DA21A25968008E7CF1 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		0D85920FE6CEAD30E9685C3B /* Pods-PickMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.release.xcconfig"; sourceTree = "<group>"; };
+		27E4D52221AAFF65002756AF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4335F206BF8559DAE005C3D2 /* Pods-PickMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.debug.xcconfig"; sourceTree = "<group>"; };
 		51C7C9D021A25967008E7CF1 /* PickMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				51C7C9D321A25967008E7CF1 /* AppDelegate.swift */,
+				27E4D52221AAFF65002756AF /* MainViewController.swift */,
 				849B6AA721A8E7FE008A588A /* MajorsTableView.swift */,
 				849B6AA921A8ECC9008A588A /* CoursesTableView.swift */,
 				849B6AAD21A90041008A588A /* SingleCourseDetails.swift */,
@@ -393,6 +396,7 @@
 				51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */,
 				849B6AAE21A90041008A588A /* SingleCourseDetails.swift in Sources */,
 				849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */,
+				27E4D52321AAFF65002756AF /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

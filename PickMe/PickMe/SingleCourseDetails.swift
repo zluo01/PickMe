@@ -13,7 +13,6 @@ class SingleCourseDetails: UIViewController {
     @IBOutlet weak var courseId: UILabel!
     @IBOutlet weak var courseTitle: UILabel!
     @IBOutlet weak var courseDes: UILabel!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     
     //var course : String!
