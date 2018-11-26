@@ -124,7 +124,7 @@
         <!--Courses-->
         <scene sceneID="rN5-Oh-xXc">
             <objects>
-                <viewController id="Mbs-eW-wmF" customClass="CoursesTableView" customModule="PickMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mbs-eW-wmF" customClass="CoursesTableView" customModule="PickMe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pwX-g3-msf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,6 +212,21 @@
                                     <constraint firstItem="oKJ-vM-166" firstAttribute="top" secondItem="1z9-d8-DOn" secondAttribute="top" id="etK-8I-aK0"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xr-om-Gp1">
+                                <rect key="frame" x="130" y="235" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Taken This Class"/>
+                                <connections>
+                                    <action selector="addClassAction:" destination="nxc-iK-i1f" eventType="touchUpInside" id="aSU-6P-20U"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Taken at which semester?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Bs-V1-Cdh">
+                                <rect key="frame" x="70" y="273" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.63137254899999995" green="0.94117647059999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -229,10 +244,12 @@
                         <viewLayoutGuide key="safeArea" id="2VJ-KB-qBB"/>
                     </view>
                     <connections>
+                        <outlet property="addClassButton" destination="2xr-om-Gp1" id="JFB-2p-I9p"/>
                         <outlet property="courseDes" destination="oKJ-vM-166" id="cu4-rg-0E7"/>
                         <outlet property="courseId" destination="9XE-Fc-Fp2" id="3SC-DR-qsB"/>
                         <outlet property="courseTitle" destination="zXn-2G-OOy" id="PM4-ka-ceA"/>
                         <outlet property="scrollView" destination="1z9-d8-DOn" id="ZhR-wo-ePm"/>
+                        <outlet property="semesterField" destination="4Bs-V1-Cdh" id="fdd-Rl-Idj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qy-D0-5Ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
