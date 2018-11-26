@@ -2,7 +2,7 @@
 //  RegisterViewController.swift
 //  PickMe
 //
-//  Created by ShaneTong on 11/25/18.
+//  Created by HarryWei on 11/25/18.
 //  Copyright © 2018 z.luo. All rights reserved.
 //
 

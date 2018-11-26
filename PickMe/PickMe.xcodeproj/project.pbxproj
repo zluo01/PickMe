@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2729C04021ABA80400ADD65D /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2729C03F21ABA80400ADD65D /* UserProfileViewController.swift */; };
 		27E4D52321AAFF65002756AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4D52221AAFF65002756AF /* LoginViewController.swift */; };
 		27E4D52721AB307C002756AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27E4D52621AB307C002756AF /* GoogleService-Info.plist */; };
 		51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D321A25967008E7CF1 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		0D85920FE6CEAD30E9685C3B /* Pods-PickMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.release.xcconfig"; sourceTree = "<group>"; };
+		2729C03F21ABA80400ADD65D /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		27E4D52221AAFF65002756AF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		27E4D52621AB307C002756AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,17 +145,18 @@
 				51C7C9D321A25967008E7CF1 /* AppDelegate.swift */,
 				27E4D52221AAFF65002756AF /* LoginViewController.swift */,
 				FFADFB6021AB1C9D001194C9 /* RegisterViewController.swift */,
+				FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */,
 				849B6AA721A8E7FE008A588A /* MajorsTableView.swift */,
 				849B6AA921A8ECC9008A588A /* CoursesTableView.swift */,
 				849B6AAD21A90041008A588A /* SingleCourseDetails.swift */,
+				FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */,
+				FFADFB6621AB69D2001194C9 /* WebViewController.swift */,
+				2729C03F21ABA80400ADD65D /* UserProfileViewController.swift */,
 				51C7C9D721A25967008E7CF1 /* Main.storyboard */,
 				51C7C9DA21A25968008E7CF1 /* Assets.xcassets */,
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
 				27E4D52621AB307C002756AF /* GoogleService-Info.plist */,
-				FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */,
-				FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */,
-				FFADFB6621AB69D2001194C9 /* WebViewController.swift */,
 			);
 			path = PickMe;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */,
+				2729C04021ABA80400ADD65D /* UserProfileViewController.swift in Sources */,
 				FFADFB6721AB69D2001194C9 /* WebViewController.swift in Sources */,
 				FFADFB6321AB1D3D001194C9 /* ProfileOptionViewController.swift in Sources */,
 				51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */,
