@@ -264,7 +264,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="8aG-Rl-9Uc"/>
                     </view>
                     <navigationItem key="navigationItem" id="m2X-2c-zoz"/>
@@ -322,7 +322,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="Flx-W7-gv7"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Y1-cx-Xab"/>
@@ -395,7 +395,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="kqH-ID-lcx"/>
                     </view>
                     <navigationItem key="navigationItem" id="gYQ-lq-1Hh"/>
