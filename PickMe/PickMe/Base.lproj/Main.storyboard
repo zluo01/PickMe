@@ -54,7 +54,7 @@
         <!--Title-->
         <scene sceneID="s6u-iY-kjt">
             <objects>
-                <viewController id="95X-uE-Hts" sceneMemberID="viewController">
+                <viewController id="95X-uE-Hts" customClass="UserProfileViewController" customModule="PickMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eyn-IN-mKZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" text="Tom Will" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rUt-Ze-sp7">
-                                <rect key="frame" x="241" y="110" width="92" height="60"/>
+                                <rect key="frame" x="241" y="110" width="92" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -130,12 +130,21 @@
                                 <rect key="frame" x="214" y="198" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Import"/>
+                                <connections>
+                                    <action selector="importImage:" destination="95X-uE-Hts" eventType="touchUpInside" id="uZA-QE-Myu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2rH-H4-Gm7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="6bd-d8-yIV"/>
+                    <connections>
+                        <outlet property="majorTextView" destination="V2r-Al-DEt" id="JQu-u0-xdJ"/>
+                        <outlet property="minorTextView" destination="1Pn-dh-IE3" id="M6E-72-Jjn"/>
+                        <outlet property="myImageView" destination="i0e-oS-tob" id="RAP-TA-gAI"/>
+                        <outlet property="nameTextView" destination="rUt-Ze-sp7" id="y04-rb-nbR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQN-zG-UoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -562,7 +571,6 @@
         <!--Profile-->
         <scene sceneID="ogM-Bg-xaa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lb4-kl-wR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="Profile" automaticallyAdjustsScrollViewInsets="NO" id="3nH-ef-KP8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="wbc-XI-vdg"/>
                     <toolbarItems/>
@@ -575,6 +583,7 @@
                         <segue destination="95X-uE-Hts" kind="relationship" relationship="rootViewController" id="W4A-Vg-3iH"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lb4-kl-wR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1922" y="-125"/>
         </scene>
