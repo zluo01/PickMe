@@ -23,6 +23,8 @@
 		9140D840854732857EAFF0BC /* Pods_PickMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */; };
 		FFADFB6121AB1C9D001194C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6021AB1C9D001194C9 /* RegisterViewController.swift */; };
 		FFADFB6321AB1D3D001194C9 /* ProfileOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */; };
+		FFADFB6521AB5E7C001194C9 /* RequirementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */; };
+		FFADFB6721AB69D2001194C9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6621AB69D2001194C9 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFADFB6021AB1C9D001194C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionViewController.swift; sourceTree = "<group>"; };
+		FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsViewController.swift; sourceTree = "<group>"; };
+		FFADFB6621AB69D2001194C9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
 				849B6AB121A9123B008A588A /* GoogleService-Info.plist */,
 				FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */,
+				FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */,
+				FFADFB6621AB69D2001194C9 /* WebViewController.swift */,
 			);
 			path = PickMe;
 			sourceTree = "<group>";
@@ -401,9 +407,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */,
+				FFADFB6721AB69D2001194C9 /* WebViewController.swift in Sources */,
 				FFADFB6321AB1D3D001194C9 /* ProfileOptionViewController.swift in Sources */,
 				51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */,
 				849B6AAE21A90041008A588A /* SingleCourseDetails.swift in Sources */,
+				FFADFB6521AB5E7C001194C9 /* RequirementsViewController.swift in Sources */,
 				FFADFB6121AB1C9D001194C9 /* RegisterViewController.swift in Sources */,
 				849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */,
 				27E4D52321AAFF65002756AF /* LoginViewController.swift in Sources */,
