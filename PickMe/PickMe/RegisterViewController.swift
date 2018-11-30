@@ -14,9 +14,7 @@ class RegisterViewController: UIViewController {
 
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
-  
     @IBOutlet var confirmPasswordField: UITextField!
-    
     @IBOutlet var registerButton: UIButton!
     
    // var shouldSegue = false
@@ -47,6 +45,7 @@ class RegisterViewController: UIViewController {
                     print("User has signed up!")
                     //self.shouldSegue = true
                     self.performSegue(withIdentifier: "RegisterToProfileEdit", sender: nil)
+                    
                 }
                 if error != nil{
                     print("error detected!")

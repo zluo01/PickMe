@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class UserProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-
 
     @IBOutlet weak var myImageView: UIImageView!
     
@@ -57,6 +58,20 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         minorTextView.autocapitalizationType = UITextAutocapitalizationType.allCharacters
         
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            let alertController = UIAlertController(title: "Logout Success", message: "You have successfully logged out!", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+            print("You have logged out!")
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -36,6 +36,8 @@ class LoginViewController: UIViewController {
                 alertController.addAction(cancelAction)
                 self.present(alertController, animated: true, completion: nil)
                 print("User has signed up!")
+                self.performSegue(withIdentifier: "LoginToProfileSegue", sender: nil)
+                
             }
             if error != nil{
                 print("error detected!")

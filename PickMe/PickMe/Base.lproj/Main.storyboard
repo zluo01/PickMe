@@ -125,6 +125,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-i6-TYI">
+                                <rect key="frame" x="312" y="20" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="95X-uE-Hts" eventType="touchUpInside" id="kZp-YM-DLu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2rH-H4-Gm7"/>
@@ -139,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQN-zG-UoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="-273"/>
+            <point key="canvasLocation" x="4833" y="2605"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZMn-Kh-NED">
@@ -440,6 +448,7 @@
                         <outlet property="emailField" destination="wCU-AA-XvZ" id="ZtJ-mp-zAb"/>
                         <outlet property="loginButton" destination="spx-4B-oLx" id="3w7-4U-4RX"/>
                         <outlet property="passwordField" destination="kUE-Xk-5GA" id="2X6-NN-6jV"/>
+                        <segue destination="95X-uE-Hts" kind="showDetail" identifier="LoginToProfileSegue" id="gVt-fI-hlb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLi-3k-pie" userLabel="First Responder" sceneMemberID="firstResponder"/>
