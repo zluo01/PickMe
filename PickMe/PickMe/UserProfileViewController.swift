@@ -20,6 +20,8 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var secondMajorLabel: UILabel!
     @IBOutlet weak var userActionButton: UIBarButtonItem!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     //    @IBAction func importImage(_ sender: UIButton) {
 //        let image = UIImagePickerController()
 //        image.delegate = self
@@ -53,12 +55,18 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     
     //Todo implement
     @IBAction func tableSwitch(_ sender: UISegmentedControl) {
+        // if class taken
+        // reload class taken to tableview
+        
+        // if favor
+        //reload favor class to tableview
     }
     
     // Todo implement login logout
     @IBAction func userActions(_ sender: Any) {
         if isGuest() {
             // go to login page
+            // identifer is ProfileToLogin
         } else { // logout here
             let firebaseAuth = Auth.auth()
             do {
