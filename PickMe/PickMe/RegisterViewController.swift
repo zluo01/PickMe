@@ -18,12 +18,18 @@ class RegisterViewController: UIViewController {
     @IBOutlet var confirmPasswordField: UITextField!
     
     @IBOutlet var registerButton: UIButton!
+    
+   // var shouldSegue = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
     
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        return shouldSegue
+//    }
+//
     @IBAction func registerAction(_ sender: UIButton) {
         if passwordField.text != confirmPasswordField.text {
             let alertController = UIAlertController(title: "Password Mismatch", message: "Please re-enter password", preferredStyle: .alert)
@@ -39,6 +45,8 @@ class RegisterViewController: UIViewController {
                     alertController.addAction(cancelAction)
                     self.present(alertController, animated: true, completion: nil)
                     print("User has signed up!")
+                    //self.shouldSegue = true
+                    self.performSegue(withIdentifier: "RegisterToProfileEdit", sender: nil)
                 }
                 if error != nil{
                     print("error detected!")
