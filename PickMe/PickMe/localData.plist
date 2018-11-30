@@ -5,7 +5,7 @@
 	<key>mojorMinors</key>
 	<array/>
 	<key>guest</key>
-	<false/>
+	<true/>
 	<key>taken</key>
 	<dict>
 		<key>1</key>
