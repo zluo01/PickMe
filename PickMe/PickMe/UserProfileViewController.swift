@@ -10,13 +10,16 @@ import UIKit
 
 class UserProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
 
+
     @IBOutlet weak var myImageView: UIImageView!
     
-        @IBOutlet weak var nameTextView: UITextView!
-        @IBOutlet weak var majorTextView: UITextView!
-        @IBOutlet weak var minorTextView: UITextView!
+    @IBOutlet weak var nameTextView: UITextView!
+
+    @IBOutlet weak var majorTextView: UITextView!
+
+    @IBOutlet weak var minorTextView: UITextView!
     
-    @IBAction func importImage(_ sender: AnyObject){
+    @IBAction func importImage(_ sender: UIButton) {
         let image = UIImagePickerController()
         image.delegate = self
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -38,8 +41,8 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameTextView.text = "Joseph Halom"
-        nameTextView.font = UIFont.boldSystemFont(ofSize: 30)
+        nameTextView.text = "Jon Halom"
+        nameTextView.font = UIFont.boldSystemFont(ofSize: 22)
         nameTextView.isEditable = true
         nameTextView.autocapitalizationType = UITextAutocapitalizationType.allCharacters
         

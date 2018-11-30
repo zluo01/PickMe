@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" text="Tom Will" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rUt-Ze-sp7">
-                                <rect key="frame" x="241" y="110" width="92" height="60"/>
+                                <rect key="frame" x="241" y="110" width="92" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -116,6 +116,9 @@
                                 <rect key="frame" x="214" y="198" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Import"/>
+                                <connections>
+                                    <action selector="importImage:" destination="95X-uE-Hts" eventType="touchUpInside" id="uZA-QE-Myu"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XFr-qU-M5e">
                                 <rect key="frame" x="41" y="381" width="292" height="225"/>
@@ -127,6 +130,12 @@
                         <viewLayoutGuide key="safeArea" id="2rH-H4-Gm7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="6bd-d8-yIV"/>
+                    <connections>
+                        <outlet property="majorTextView" destination="V2r-Al-DEt" id="JQu-u0-xdJ"/>
+                        <outlet property="minorTextView" destination="1Pn-dh-IE3" id="M6E-72-Jjn"/>
+                        <outlet property="myImageView" destination="i0e-oS-tob" id="RAP-TA-gAI"/>
+                        <outlet property="nameTextView" destination="rUt-Ze-sp7" id="y04-rb-nbR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQN-zG-UoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
