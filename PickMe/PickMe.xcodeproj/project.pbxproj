@@ -26,6 +26,7 @@
 		FFADFB6321AB1D3D001194C9 /* ProfileOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */; };
 		FFADFB6521AB5E7C001194C9 /* RequirementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */; };
 		FFADFB6721AB69D2001194C9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6621AB69D2001194C9 /* WebViewController.swift */; };
+		FFBFD95321B0E34C00A13CB5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBFD95221B0E34C00A13CB5 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionViewController.swift; sourceTree = "<group>"; };
 		FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsViewController.swift; sourceTree = "<group>"; };
 		FFADFB6621AB69D2001194C9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		FFBFD95221B0E34C00A13CB5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
 				27E4D52621AB307C002756AF /* GoogleService-Info.plist */,
+				FFBFD95221B0E34C00A13CB5 /* EditProfileViewController.swift */,
 			);
 			path = PickMe;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBFD95321B0E34C00A13CB5 /* EditProfileViewController.swift in Sources */,
 				849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */,
 				2729C04021ABA80400ADD65D /* UserProfileViewController.swift in Sources */,
 				FFADFB6721AB69D2001194C9 /* WebViewController.swift in Sources */,
