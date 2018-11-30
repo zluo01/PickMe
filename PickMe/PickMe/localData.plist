@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mojorMinors</key>
+	<array/>
+	<key>guest</key>
+	<false/>
+	<key>taken</key>
+	<dict>
+		<key>1</key>
+		<array/>
+		<key>2</key>
+		<array/>
+		<key>3</key>
+		<array/>
+		<key>4</key>
+		<array/>
+		<key>5</key>
+		<array/>
+		<key>6</key>
+		<array/>
+		<key>7</key>
+		<array/>
+		<key>8</key>
+		<array/>
+	</dict>
+	<key>favorClass</key>
+	<dict/>
+</dict>
+</plist>

@@ -10,12 +10,14 @@
 		2729C04021ABA80400ADD65D /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2729C03F21ABA80400ADD65D /* UserProfileViewController.swift */; };
 		27E4D52321AAFF65002756AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4D52221AAFF65002756AF /* LoginViewController.swift */; };
 		27E4D52721AB307C002756AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27E4D52621AB307C002756AF /* GoogleService-Info.plist */; };
+		51B437D921B1C93100F79681 /* localData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51B437D821B1C93100F79681 /* localData.plist */; };
 		51B56C2D21B12EF8009A6187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51B56C2C21B12EF8009A6187 /* Assets.xcassets */; };
 		51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D321A25967008E7CF1 /* AppDelegate.swift */; };
 		51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9D721A25967008E7CF1 /* Main.storyboard */; };
 		51C7C9DE21A25968008E7CF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */; };
 		51C7C9E921A25968008E7CF1 /* PickMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9E821A25968008E7CF1 /* PickMeTests.swift */; };
 		51C7C9F421A25968008E7CF1 /* PickMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9F321A25968008E7CF1 /* PickMeUITests.swift */; };
+		51C90C0421B1CB19003FF19D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C90C0321B1CB19003FF19D /* Utils.swift */; };
 		54190B18E26B73271C4F77B4 /* Pods_PickMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */; };
 		849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA721A8E7FE008A588A /* MajorsTableView.swift */; };
 		849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA921A8ECC9008A588A /* CoursesTableView.swift */; };
@@ -53,6 +55,7 @@
 		27E4D52621AB307C002756AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4335F206BF8559DAE005C3D2 /* Pods-PickMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.debug.xcconfig"; sourceTree = "<group>"; };
+		51B437D821B1C93100F79681 /* localData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = localData.plist; sourceTree = "<group>"; };
 		51B56C2C21B12EF8009A6187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51C7C9D021A25967008E7CF1 /* PickMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C7C9D321A25967008E7CF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		51C7C9EF21A25968008E7CF1 /* PickMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C7C9F321A25968008E7CF1 /* PickMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMeUITests.swift; sourceTree = "<group>"; };
 		51C7C9F521A25968008E7CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51C90C0321B1CB19003FF19D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		61462861C3C34250DB269093 /* Pods-PickMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D3DBD4F0396C8FBA51ED3F0 /* Pods-PickMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeUITests/Pods-PickMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		849B6AA721A8E7FE008A588A /* MajorsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorsTableView.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		51C7C9D221A25967008E7CF1 /* PickMe */ = {
 			isa = PBXGroup;
 			children = (
+				51C90C0321B1CB19003FF19D /* Utils.swift */,
 				51B56C2C21B12EF8009A6187 /* Assets.xcassets */,
 				51C7C9D321A25967008E7CF1 /* AppDelegate.swift */,
 				27E4D52221AAFF65002756AF /* LoginViewController.swift */,
@@ -160,6 +165,7 @@
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
 				27E4D52621AB307C002756AF /* GoogleService-Info.plist */,
 				FFBFD95221B0E34C00A13CB5 /* EditProfileViewController.swift */,
+				51B437D821B1C93100F79681 /* localData.plist */,
 			);
 			path = PickMe;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				27E4D52721AB307C002756AF /* GoogleService-Info.plist in Resources */,
 				51B56C2D21B12EF8009A6187 /* Assets.xcassets in Resources */,
 				51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */,
+				51B437D921B1C93100F79681 /* localData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +380,7 @@
 				"${BUILT_PRODUCTS_DIR}/ExpandingMenu/ExpandingMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyPlistManager/SwiftyPlistManager.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -381,6 +389,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandingMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPlistManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -425,6 +434,7 @@
 				FFADFB6121AB1C9D001194C9 /* RegisterViewController.swift in Sources */,
 				849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */,
 				27E4D52321AAFF65002756AF /* LoginViewController.swift in Sources */,
+				51C90C0421B1CB19003FF19D /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

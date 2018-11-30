@@ -10,6 +10,8 @@
 
 import UIKit
 import FirebaseDatabase
+import SwiftyPlistManager
+
 class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var majorsTable: UITableView!
@@ -24,6 +26,9 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         majorsTable.dataSource = self
         majorsTable.delegate = self
         majorSearch.delegate = self
+        
+        SwiftyPlistManager.shared.start(plistNames: [plistName], logging: true)
+        
         // fetch data
         fetchDataFromFirebase("")
     }

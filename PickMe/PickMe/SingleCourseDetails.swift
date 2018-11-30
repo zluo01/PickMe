@@ -152,7 +152,8 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         func favorClass() {
             // add to user default
-            
+            favorList[details["course_code"]!] = details
+            updateFavor(favorList)
             //add to database if log in
         }
         

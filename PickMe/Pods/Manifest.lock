@@ -66,12 +66,14 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SwiftyPlistManager (1.0.2)
 
 DEPENDENCIES:
   - ExpandingMenu (~> 0.4)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - SwiftyPlistManager
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -88,6 +90,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - SwiftyPlistManager
 
 SPEC CHECKSUMS:
   ExpandingMenu: 3187a4ed1aa1aea85418e444c213e4cd6063c122
@@ -103,7 +106,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SwiftyPlistManager: 5895924cccb7fe28deccbe14890e8aed78ae78ae
 
-PODFILE CHECKSUM: 08b35c7fcd3c4e9e241b14e9da0fcbebb09d115a
+PODFILE CHECKSUM: 9c0b5351e4fe48f487f6ca9dc5847fe0cd46755f
 
 COCOAPODS: 1.5.3
