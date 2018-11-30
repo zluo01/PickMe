@@ -9,6 +9,7 @@ target 'PickMe' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'ExpandingMenu', '~> 0.4'
 
   target 'PickMeTests' do
     inherit! :search_paths

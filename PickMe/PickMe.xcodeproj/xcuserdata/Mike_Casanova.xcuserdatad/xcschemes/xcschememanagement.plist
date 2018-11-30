@@ -7,7 +7,25 @@
 		<key>PickMe.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>12</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>51C7C9CF21A25967008E7CF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51C7C9E321A25968008E7CF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51C7C9EE21A25968008E7CF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

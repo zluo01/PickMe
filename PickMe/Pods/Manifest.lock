@@ -1,4 +1,5 @@
 PODS:
+  - ExpandingMenu (0.4.0)
   - Firebase/Auth (5.12.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.5)
@@ -67,12 +68,14 @@ PODS:
   - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
+  - ExpandingMenu (~> 0.4)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ExpandingMenu
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -87,6 +90,7 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  ExpandingMenu: 3187a4ed1aa1aea85418e444c213e4cd6063c122
   Firebase: 9190018e296139d938b99521cde0c15a6e8d2946
   FirebaseAnalytics: 63202d2665de4e6adcbdce189135255d8b5962ba
   FirebaseAuth: 9299ab178271bec7426967b05b2718bb6fc31f17
@@ -100,6 +104,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 2ecbd2c954eb64fa9e4202b953f617f102f3b085
+PODFILE CHECKSUM: 08b35c7fcd3c4e9e241b14e9da0fcbebb09d115a
 
 COCOAPODS: 1.5.3
