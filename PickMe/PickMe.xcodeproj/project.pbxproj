@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2729C04021ABA80400ADD65D /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2729C03F21ABA80400ADD65D /* UserProfileViewController.swift */; };
 		27E4D52321AAFF65002756AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4D52221AAFF65002756AF /* LoginViewController.swift */; };
-		27E4D52721AB307C002756AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27E4D52621AB307C002756AF /* GoogleService-Info.plist */; };
 		51B437D921B1C93100F79681 /* localData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51B437D821B1C93100F79681 /* localData.plist */; };
 		51B56C2D21B12EF8009A6187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51B56C2C21B12EF8009A6187 /* Assets.xcassets */; };
 		51C7C9D421A25967008E7CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9D321A25967008E7CF1 /* AppDelegate.swift */; };
@@ -52,7 +51,6 @@
 		0D85920FE6CEAD30E9685C3B /* Pods-PickMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.release.xcconfig"; sourceTree = "<group>"; };
 		2729C03F21ABA80400ADD65D /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		27E4D52221AAFF65002756AF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		27E4D52621AB307C002756AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4335F206BF8559DAE005C3D2 /* Pods-PickMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMe/Pods-PickMe.debug.xcconfig"; sourceTree = "<group>"; };
 		51B437D821B1C93100F79681 /* localData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = localData.plist; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				51C7C9D721A25967008E7CF1 /* Main.storyboard */,
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
-				27E4D52621AB307C002756AF /* GoogleService-Info.plist */,
 				FFBFD95221B0E34C00A13CB5 /* EditProfileViewController.swift */,
 				51B437D821B1C93100F79681 /* localData.plist */,
 			);
@@ -213,6 +210,7 @@
 				51C7C9CD21A25967008E7CF1 /* Frameworks */,
 				51C7C9CE21A25967008E7CF1 /* Resources */,
 				882C1F53C7A45135F9F9B3FC /* [CP] Embed Pods Frameworks */,
+				5BB0747034AC4B5B3D4B24BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C7C9DE21A25968008E7CF1 /* LaunchScreen.storyboard in Resources */,
-				27E4D52721AB307C002756AF /* GoogleService-Info.plist in Resources */,
 				51B56C2D21B12EF8009A6187 /* Assets.xcassets in Resources */,
 				51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */,
 				51B437D921B1C93100F79681 /* localData.plist in Resources */,
@@ -368,6 +365,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BB0747034AC4B5B3D4B24BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PickMe/Pods-PickMe-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickMe/Pods-PickMe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		882C1F53C7A45135F9F9B3FC /* [CP] Embed Pods Frameworks */ = {

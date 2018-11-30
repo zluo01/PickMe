@@ -8,10 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseUI
 import FirebaseDatabase
 import ExpandingMenu
 
-class UserProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+class UserProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, FUIAuthDelegate{
 
     @IBOutlet weak var myImageView: UIImageView!
     
@@ -20,6 +21,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var secondMajorLabel: UILabel!
     @IBOutlet weak var userActionButton: UIBarButtonItem!
     
+    @IBOutlet var minorLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     //    @IBAction func importImage(_ sender: UIButton) {
@@ -45,12 +47,15 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isGuest() {
+      
+        configureExpandingMenuButton()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser == nil {
             userActionButton.title = "Login"
         } else { // Todo double check here
             userActionButton.title = "Logout"
         }
-        configureExpandingMenuButton()
     }
     
     //Todo implement
@@ -64,20 +69,71 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     
     // Todo implement login logout
     @IBAction func userActions(_ sender: Any) {
-        if isGuest() {
+        if Auth.auth().currentUser == nil {
             // go to login page
             // identifer is ProfileToLogin
+            let authUI = FUIAuth.defaultAuthUI()
+            
+            guard authUI != nil else {
+                return
+            }
+            
+            authUI?.delegate = self
+            
+            let authViewController = authUI!.authViewController()
+            
+            present(authViewController, animated: true, completion: nil)
         } else { // logout here
-            let firebaseAuth = Auth.auth()
+            let authUI = FUIAuth.defaultAuthUI()
             do {
-                try firebaseAuth.signOut()
+                try authUI?.signOut()
                 let alertController = UIAlertController(title: "Logout Success", message: "You have successfully logged out!", preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(cancelAction)
                 self.present(alertController, animated: true, completion: nil)
                 print("You have logged out!")
+                reloadAllData()
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
+            }
+        }
+    }
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        if error != nil {
+            return
+        }
+        
+        //reload all data
+        reloadAllData()
+        
+    }
+    
+    func reloadAllData() {
+        if Auth.auth().currentUser == nil {
+            firstMajorLabel.text = "Major / Minor"
+            secondMajorLabel.text = "Major / Minor"
+            minorLabel.text = "Major / Minor"
+            name.text = "Guest"
+        }
+        else {
+            name.text = Auth.auth().currentUser?.displayName != nil ? Auth.auth().currentUser?.displayName! : "Anonymous"
+            var user_data = Dictionary<String, Dictionary<String, String>>()
+            let ref = Database.database().reference()
+            ref.observe(.value, with: {
+                snapshot in
+                user_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, String>>
+            })
+            if user_data.keys.contains((Auth.auth().currentUser?.uid)!) {
+                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("first_major") {
+                    firstMajorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["first_major"]
+                }
+                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("second_major") {
+                    secondMajorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["second_major"]
+                }
+                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
+                    minorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["minor"]
+                }
             }
         }
     }
