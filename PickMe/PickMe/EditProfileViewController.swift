@@ -7,8 +7,8 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
-import FirebaseStorage
 import FirebaseAuth
 import FirebaseUI
 
@@ -27,6 +27,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     var minorArray = [String]()
     
     override func viewDidLoad() {
+        if let origName = Auth.auth().currentUser?.displayName {
+            nameField.text = origName
+        }
         super.viewDidLoad()
         majorArray.append("None")
         minorArray.append("None")
@@ -72,16 +75,72 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         dismiss(animated: true, completion: nil)
     }
     
-    func updateImage() {
-        //Upload to Storage
+    @IBAction func submitButtonClicked(_ sender: UIButton) {
+        submitInfo()
         
     }
+    func submitInfo() {
+        //Upload to Storage
+        if let theImage = imageView.image {
+            self.uploadToStorage(theImage, completion: {url in
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = self.nameField.text
+                changeRequest?.photoURL = url
+                
+                changeRequest?.commitChanges(completion: { error in
+                    if error == nil {
+                        print("Update success")
+                    }
+                    else {
+                        print("Error!")
+                    }
+                })
+            })
+        }
+        else {
+            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+            changeRequest?.displayName = self.nameField.text
+            
+            changeRequest?.commitChanges(completion: { error in
+                if error == nil {
+                    print("Update success")
+                }
+                else {
+                    print("Error!")
+                }
+            })
+        }
+        let firstMajorString = firstMajorField.text != nil ? firstMajorField.text! : "None"
+        let secondMajorString = secondMajorField.text != nil ?  secondMajorField.text! : "None"
+        let minorString = minorField.text != nil ?  minorField.text! : "None"
+        let ref = Database.database().reference()
+        ref.child("profile").child((Auth.auth().currentUser?.uid)!).setValue(["firstMajor": firstMajorString, "secondMajor" : secondMajorString, "minor" : minorString])
+    }
     
-    func uploadToStorage(_ image: UIImage, clean: @escaping ((_ url:String?)->())) {
+    func uploadToStorage(_ image: UIImage, completion: @escaping ((_ url:URL?)->())){
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
-        let storage
+        let storageRef = Storage.storage().reference().child("user/\(uid)")
+        guard let imageData = UIImageJPEGRepresentation(image, 0.75) else {return}
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        storageRef.putData(imageData, metadata: metaData, completion: { (metadata, error) in
+            guard let metadata = metadata else {
+                print("Upload error")
+                return
+            }
+            storageRef.downloadURL(completion: {(url, error) in
+                if url != nil {
+                    completion(url)
+                }
+                else {
+                    return
+                }
+            })
+        })
+        
+        
     }
     
     //pickerview function begins

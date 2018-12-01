@@ -142,6 +142,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    
     fileprivate func configureExpandingMenuButton() {
         let menuButtonSize: CGSize = CGSize(width: 64.0, height: 64.0)
         let menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), image: UIImage(named: "chooser-button-tab")!, rotatedImage: UIImage(named: "chooser-button-tab-highlighted")!)
