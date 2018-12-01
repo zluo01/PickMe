@@ -23,6 +23,8 @@
 		849B6AAE21A90041008A588A /* SingleCourseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AAD21A90041008A588A /* SingleCourseDetails.swift */; };
 		8C5AA0BDB8AF125644152ECB /* Pods_PickMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */; };
 		9140D840854732857EAFF0BC /* Pods_PickMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */; };
+		FF7101C921B201BE00009FB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF7101C821B201BE00009FB5 /* GoogleService-Info.plist */; };
+		FF7101CB21B2144000009FB5 /* user_male@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7101CA21B2143F00009FB5 /* user_male@3x.png */; };
 		FFADFB6121AB1C9D001194C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6021AB1C9D001194C9 /* RegisterViewController.swift */; };
 		FFADFB6321AB1D3D001194C9 /* ProfileOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */; };
 		FFADFB6521AB5E7C001194C9 /* RequirementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */; };
@@ -76,7 +78,8 @@
 		DE0CB5097ED0D10E58BDA872 /* Pods-PickMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF7101C721B2000800009FB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF7101C821B201BE00009FB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF7101CA21B2143F00009FB5 /* user_male@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_male@3x.png"; sourceTree = "<group>"; };
 		FFADFB6021AB1C9D001194C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FFADFB6221AB1D3D001194C9 /* ProfileOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionViewController.swift; sourceTree = "<group>"; };
 		FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		51C7C9D221A25967008E7CF1 /* PickMe */ = {
 			isa = PBXGroup;
 			children = (
+				FF7101CA21B2143F00009FB5 /* user_male@3x.png */,
 				51C90C0321B1CB19003FF19D /* Utils.swift */,
 				51B56C2C21B12EF8009A6187 /* Assets.xcassets */,
 				51C7C9D321A25967008E7CF1 /* AppDelegate.swift */,
@@ -161,8 +165,8 @@
 				2729C03F21ABA80400ADD65D /* UserProfileViewController.swift */,
 				51C7C9D721A25967008E7CF1 /* Main.storyboard */,
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
+				FF7101C821B201BE00009FB5 /* GoogleService-Info.plist */,
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
-				FF7101C721B2000800009FB5 /* GoogleService-Info.plist */,
 				FFBFD95221B0E34C00A13CB5 /* EditProfileViewController.swift */,
 				51B437D821B1C93100F79681 /* localData.plist */,
 			);
@@ -310,7 +314,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C7C9DE21A25968008E7CF1 /* LaunchScreen.storyboard in Resources */,
+				FF7101CB21B2144000009FB5 /* user_male@3x.png in Resources */,
 				51B56C2D21B12EF8009A6187 /* Assets.xcassets in Resources */,
+				FF7101C921B201BE00009FB5 /* GoogleService-Info.plist in Resources */,
 				51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */,
 				51B437D921B1C93100F79681 /* localData.plist in Resources */,
 			);

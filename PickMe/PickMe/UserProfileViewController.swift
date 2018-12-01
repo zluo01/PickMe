@@ -150,6 +150,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         
         let edit = ExpandingMenuItem(size: menuButtonSize, title: "Edit", image: UIImage(named: "heart")!, highlightedImage: UIImage(named: "heart-highlight")!, backgroundImage: UIImage(named: "chooser-moment-button"), backgroundHighlightedImage: UIImage(named: "chooser-moment-button-highlighted")) { () -> Void in
             // add action here
+            self.performSegue(withIdentifier: "profileToEdit", sender: self)
         }
         
         menuButton.addMenuItems([edit])

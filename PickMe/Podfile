@@ -12,6 +12,8 @@ target 'PickMe' do
   pod 'ExpandingMenu', '~> 0.4'
   pod 'SwiftyPlistManager'
   pod 'FirebaseUI/Auth'
+  pod 'Firebase/Storage'
+  
   target 'PickMeTests' do
     inherit! :search_paths
     # Pods for testing
