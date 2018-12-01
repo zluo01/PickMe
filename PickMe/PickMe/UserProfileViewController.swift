@@ -23,6 +23,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     
     @IBOutlet var minorLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var backFromEdit = false
     
     //    @IBAction func importImage(_ sender: UIButton) {
 //        let image = UIImagePickerController()
@@ -55,6 +56,13 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             userActionButton.title = "Login"
         } else { // Todo double check here
             userActionButton.title = "Logout"
+        }
+        if backFromEdit {
+            let alertController = UIAlertController(title: "Profile Update Success", message: "You have successfully updated your profile!", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+            backFromEdit = false
         }
     }
     
@@ -142,6 +150,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func unwindToProfile(_ sender: UIStoryboardSegue) {}
     
     fileprivate func configureExpandingMenuButton() {
         let menuButtonSize: CGSize = CGSize(width: 64.0, height: 64.0)

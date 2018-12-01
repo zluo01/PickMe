@@ -77,7 +77,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         submitInfo()
-        
+        self.performSegue(withIdentifier: "backToProfileSegue", sender: self)
     }
     func submitInfo() {
         //Upload to Storage
@@ -234,7 +234,11 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         })
         print("Finish grab data")
     }
-    
+    //prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destination = segue.destination as! UserProfileViewController
+        destination.backFromEdit = true
+    }
 
     /*
     // MARK: - Navigation
