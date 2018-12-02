@@ -39,6 +39,13 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var PickView: UIView!
     @IBOutlet weak var picker: UIPickerView!
     
+    @IBOutlet weak var c_one: UILabel!
+    @IBOutlet weak var c_two: UILabel!
+    @IBOutlet weak var c_three: UILabel!
+    @IBOutlet weak var c_four: UILabel!
+    @IBOutlet weak var c_five: UILabel!
+    
+    @IBOutlet weak var recommendLabel: UILabel!
     var selectedText = String()
     var details : [String: String]!
     
@@ -67,12 +74,20 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         selectedText = semesters[0]
         configureExpandingMenuButton()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if(isLogIn()){
+            recommendLabel.isHidden = false
+            c_one.isHidden = false
+            c_two.isHidden = false
+            c_three.isHidden = false
+            c_four.isHidden = false
+            c_five.isHidden = false
             recommend()
         }
     }
-    
+
     @IBAction func cancelAction(_ sender: UIButton) {
         PickView.isHidden = true
     }
@@ -148,7 +163,29 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
                         }
                     }
                 }
-                let recommend = map.sorted(by: {$0.value >= $1.value}).dropFirst(5)
+                var recommend = map.sorted(by: {$0.value >= $1.value})
+                self.c_one.text = "None"
+                self.c_two.text = "None"
+                self.c_three.text = "None"
+                self.c_four.text = "None"
+                self.c_five.text = "None"
+                if recommend.count > 0 {
+                    if recommend.count < 2 {
+                        self.c_one.text = recommend[0].key
+                    }
+                    if recommend.count < 3 {
+                        self.c_two.text = recommend[1].key
+                    }
+                    if recommend.count < 4 {
+                        self.c_three.text = recommend[2].key
+                    }
+                    if recommend.count < 5 {
+                        self.c_four.text = recommend[3].key
+                    }
+                    if recommend.count < 6 {
+                        self.c_five.text = recommend[4].key
+                    }
+                }
             })
         }
     }
