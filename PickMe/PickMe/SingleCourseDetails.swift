@@ -185,10 +185,6 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
                     UserDefaults.standard.set(favArray, forKey: "fav")
                 }
             }
-            
-            favorList[details["course_code"]!] = details
-            updateFavor(favorList)
-            //add to database if log in
         }
         
         menuButton.addMenuItems([favor, check])

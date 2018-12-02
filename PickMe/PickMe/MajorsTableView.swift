@@ -27,8 +27,6 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         majorsTable.delegate = self
         majorSearch.delegate = self
         
-        SwiftyPlistManager.shared.start(plistNames: [plistName], logging: true)
-        
         // fetch data
         fetchDataFromFirebase("")
         
