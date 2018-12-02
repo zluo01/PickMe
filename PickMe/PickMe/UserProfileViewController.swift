@@ -29,17 +29,18 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reloadAllData()
-     
-        // create following buttons
-        configureExpandingMenuButton()
-        
         // first time major minor, create container
         if UserDefaults.standard.stringArray(forKey: "majorMinor") == nil{
+            print(1)
             let array : [String] = ["None","None","None"]
             UserDefaults.standard.set(array, forKey: "majorMinor")
         }
         
+        reloadAllData()
+     
+        // create following buttons
+        configureExpandingMenuButton()
+
         // Todo display class taken or favor class table view
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -112,6 +113,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     func reloadNameAndMajor() {
         print("reloadNameAndMajor")
         if Auth.auth().currentUser == nil {
+            print(2)
             firstMajorLabel.text = getMajorMinor(0)
             secondMajorLabel.text = getMajorMinor(1)
             minorLabel.text = getMajorMinor(2)

@@ -21,5 +21,6 @@ func getTaken(_ semester : String) -> [String] {
 }
 
 func getMajorMinor(_ index : Int) -> String {
+    print(UserDefaults.standard.stringArray(forKey: "majorMinor") ?? [String]())
     return (UserDefaults.standard.stringArray(forKey: "majorMinor") ?? [String]())[index]
 }
