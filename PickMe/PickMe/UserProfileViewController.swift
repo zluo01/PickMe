@@ -32,6 +32,14 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         reloadAllData()
         
         configureExpandingMenuButton()
+        
+        if UserDefaults.standard.stringArray(forKey: "majorMinor") == nil{
+            
+            let array : [String] = ["None","None","None"]
+            UserDefaults.standard.set(array, forKey: "majorMinor")
+            
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         

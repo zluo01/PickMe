@@ -31,6 +31,14 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         // fetch data
         fetchDataFromFirebase("")
+        
+        if UserDefaults.standard.stringArray(forKey: "login") == nil{
+            
+            let array : [Bool] = [false]
+            UserDefaults.standard.set(array, forKey: "login")
+            
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

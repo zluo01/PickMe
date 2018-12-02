@@ -81,9 +81,25 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func addClass(_ courseCode:String, _ semester:String) {
         print("Called addClass")
         // Todo add userDefault for guest users
-        // no matter what should add to user default
-        print("Add to user default")
-        // add default code here
+//        // no matter what should add to user default
+//        print("Add to user default")
+//        // add default code here
+        
+        if UserDefaults.standard.stringArray(forKey: self.selectedText) == nil{
+            
+            var coursesArray : [String] = []
+            coursesArray.append(details["course_code"]!)
+            UserDefaults.standard.set(coursesArray, forKey: self.selectedText)
+            
+        }
+        else{
+            var coursesArray = UserDefaults.standard.stringArray(forKey: self.selectedText) ?? [String]()
+            
+            if(!coursesArray.contains(details["course_code"]!)){
+                coursesArray.append(details["course_code"]!)
+                UserDefaults.standard.set(coursesArray, forKey: self.selectedText)
+            }
+        }
         
         // if user is loged in, then also add to database
         if Auth.auth().currentUser != nil {
@@ -152,6 +168,24 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         func favorClass() {
             // add to user default
+            
+            if UserDefaults.standard.stringArray(forKey: "fav") == nil{
+                
+                var favArray : [String] = []
+                favArray.append(details["course_code"]!)
+                UserDefaults.standard.set(favArray, forKey: "fav")
+                
+            }
+            else{
+                
+                var favArray = UserDefaults.standard.stringArray(forKey: "fav") ?? [String]()
+                
+                if(!favArray.contains(details["course_code"]!)){
+                    favArray.append(details["course_code"]!)
+                    UserDefaults.standard.set(favArray, forKey: "fav")
+                }
+            }
+            
             favorList[details["course_code"]!] = details
             updateFavor(favorList)
             //add to database if log in
