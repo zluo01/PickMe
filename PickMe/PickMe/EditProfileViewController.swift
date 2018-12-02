@@ -43,25 +43,25 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func reloadNameAndMajor() {
-        print("reloadNameAndMajor")
-        nameField.text = Auth.auth().currentUser?.displayName != nil ? Auth.auth().currentUser?.displayName! : "Anonymous"
-        var user_data = Dictionary<String, Dictionary<String, String>>()
-        let ref = Database.database().reference()
-        ref.observe(.value, with: {
-            snapshot in
-            user_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, String>>
-            if user_data.keys.contains((Auth.auth().currentUser?.uid)!) {
-                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("firstMajor") {
-                    self.firstMajorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["firstMajor"]
-                }
-                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("secondMajor") {
-                    self.secondMajorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["secondMajor"]
-                }
-                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
-                    self.minorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["minor"]
-                }
-            }
-        })
+//        print("reloadNameAndMajor")
+//        nameField.text = Auth.auth().currentUser?.displayName != nil ? Auth.auth().currentUser?.displayName! : "Anonymous"
+//        var user_data = Dictionary<String, Any>()
+//        let ref = Database.database().reference()
+//        ref.observe(.value, with: {
+//            snapshot in
+//            user_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, String>>
+//            if user_data.keys.contains((Auth.auth().currentUser?.uid)!) {
+//                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("firstMajor") {
+//                    self.firstMajorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["firstMajor"]
+//                }
+//                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("secondMajor") {
+//                    self.secondMajorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["secondMajor"]
+//                }
+//                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
+//                    self.minorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["minor"]
+//                }
+//            }
+//        })
         
     }
     
@@ -177,7 +177,6 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     //pickerview function begins
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

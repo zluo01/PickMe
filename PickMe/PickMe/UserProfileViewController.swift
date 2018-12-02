@@ -121,21 +121,49 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         }
         else {
             name.text = Auth.auth().currentUser?.displayName != nil ? Auth.auth().currentUser?.displayName! : "Anonymous"
-            var user_data = Dictionary<String, Dictionary<String, String>>()
             let ref = Database.database().reference()
             ref.observe(.value, with: {
                 snapshot in
-                user_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, String>>
-                if user_data.keys.contains((Auth.auth().currentUser?.uid)!) {
-                    if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("firstMajor") {
-                        self.firstMajorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["firstMajor"]
+                var profile_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, Any>>
+                if profile_data.keys.contains((Auth.auth().currentUser?.uid)!) { // has profile data on database
+                    if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("first") {
+                        self.firstMajorLabel.text = profile_data[(Auth.auth().currentUser?.uid)!]!["firstMajor"] as? String
                     }
-                    if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("secondMajor") {
-                        self.secondMajorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["secondMajor"]
+                    if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("second") {
+                        self.secondMajorLabel.text = profile_data[(Auth.auth().currentUser?.uid)!]!["secondMajor"] as? String
                     }
-                    if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
-                        self.minorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["minor"]
+                    if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
+                        self.minorLabel.text = profile_data[(Auth.auth().currentUser?.uid)!]!["minor"] as? String
                     }
+                    if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("favorites") {
+                        var favors = [String]()
+                        for i in profile_data[(Auth.auth().currentUser?.uid)!]!["favorites"] as! [String]{
+                            if (i != "DUMMY") {
+                                favors.append(i)
+                            }
+                        }
+                        UserDefaults.standard.set(favors , forKey: "fav")
+                    }
+                    if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("taken") {
+                        var taken : [Int : [String]] = [ 1 : [], 2 : [], 3 : [], 4:[],5:[],6:[],7:[],8:[]]
+                        for (semester, course) in profile_data[(Auth.auth().currentUser?.uid)!]!["taken"] as! Dictionary<String, String> {
+                            let s = Int(semester[...0])!
+                            taken[s]!.append(course)
+                        }
+                        
+                        for i in 1...8 {
+                            UserDefaults.standard.set(taken[i] , forKey: String(i))
+                        }
+                    }
+                } else { // create container on the database
+                    let currentUser = Auth.auth().currentUser!
+                    var dict = Dictionary<String, Any>()
+                    dict["first"] = "None"
+                    dict["second"] = "None"
+                    dict["minor"] = "None"
+                    dict["favorites"] = ["DUMMY"]
+                    dict["taken"] = ["10" : "DUMMY"]
+                    ref.child("profile").child(currentUser.uid).setValue(dict)
                 }
             })
         }
@@ -158,8 +186,6 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    @IBAction func unwindToProfile(_ sender: UIStoryboardSegue) {}
     
     fileprivate func configureExpandingMenuButton() {
         let menuButtonSize: CGSize = CGSize(width: 64.0, height: 64.0)
