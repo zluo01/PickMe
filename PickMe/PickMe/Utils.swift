@@ -8,9 +8,9 @@
 
 import Foundation
 
-let isGuest : Bool = {
-    return (UserDefaults.standard.stringArray(forKey: "login") ?? [String]())[0] == "false"
-}()
+func isLogIn() -> Bool{
+    return (UserDefaults.standard.stringArray(forKey: "login") ?? [String]())[0] == "true"
+}
 
 func getFav() -> [String]{
     return UserDefaults.standard.stringArray(forKey: "fav") ?? [String]()

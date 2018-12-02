@@ -121,19 +121,8 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XFr-qU-M5e">
-                                <rect key="frame" x="41" y="340" width="292" height="273"/>
+                                <rect key="frame" x="40" y="365" width="295" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segmentedControl key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="dev-dg-MJG">
-                                    <rect key="frame" x="0.0" y="0.0" width="292" height="29"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <segments>
-                                        <segment title="Classes Taken"/>
-                                        <segment title="FavorClass"/>
-                                    </segments>
-                                    <connections>
-                                        <action selector="tableSwitch:" destination="95X-uE-Hts" eventType="valueChanged" id="yr7-9h-aoC"/>
-                                    </connections>
-                                </segmentedControl>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IRw-0g-3QQ" userLabel="minor">
                                 <rect key="frame" x="50" y="311.5" width="275" height="20.5"/>
@@ -152,17 +141,27 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dev-dg-MJG">
+                                <rect key="frame" x="40" y="337" width="295" height="29"/>
+                                <segments>
+                                    <segment title="Classes Taken"/>
+                                    <segment title="FavorClass"/>
+                                </segments>
+                                <connections>
+                                    <action selector="tableSwitch:" destination="95X-uE-Hts" eventType="valueChanged" id="yr7-9h-aoC"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2rH-H4-Gm7" firstAttribute="trailing" secondItem="dev-dg-MJG" secondAttribute="trailing" constant="40" id="21d-m6-6x6"/>
                             <constraint firstItem="3zW-je-GgQ" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="50" id="23J-wn-aAQ"/>
-                            <constraint firstItem="2rH-H4-Gm7" firstAttribute="trailing" secondItem="XFr-qU-M5e" secondAttribute="trailing" constant="42" id="3iR-JY-0J3"/>
+                            <constraint firstItem="2rH-H4-Gm7" firstAttribute="trailing" secondItem="XFr-qU-M5e" secondAttribute="trailing" constant="40" id="3iR-JY-0J3"/>
                             <constraint firstItem="2rH-H4-Gm7" firstAttribute="bottom" secondItem="XFr-qU-M5e" secondAttribute="bottom" constant="5" id="3yo-9y-kts"/>
                             <constraint firstItem="pgj-SM-H6W" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="50" id="6Qt-r9-37f"/>
                             <constraint firstItem="2rH-H4-Gm7" firstAttribute="trailing" secondItem="pgj-SM-H6W" secondAttribute="trailing" constant="50" id="9V8-T9-ju1"/>
                             <constraint firstItem="i0e-oS-tob" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="50" id="ANf-JA-izW"/>
                             <constraint firstItem="IRw-0g-3QQ" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="50" id="G7p-cx-Ks4"/>
-                            <constraint firstItem="XFr-qU-M5e" firstAttribute="top" secondItem="IRw-0g-3QQ" secondAttribute="bottom" constant="8" id="I4S-4q-80U"/>
                             <constraint firstItem="i0e-oS-tob" firstAttribute="top" secondItem="2rH-H4-Gm7" secondAttribute="top" constant="5" id="Ldm-Xa-Dtl"/>
                             <constraint firstItem="9qL-4z-9zS" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="50" id="OMF-gv-ufz"/>
                             <constraint firstItem="2rH-H4-Gm7" firstAttribute="trailing" secondItem="IRw-0g-3QQ" secondAttribute="trailing" constant="50" id="WfY-qA-5Lm"/>
@@ -173,7 +172,10 @@
                             <constraint firstItem="pgj-SM-H6W" firstAttribute="top" secondItem="9qL-4z-9zS" secondAttribute="bottom" constant="10" id="lRn-aB-2g4"/>
                             <constraint firstItem="2rH-H4-Gm7" firstAttribute="trailing" secondItem="9qL-4z-9zS" secondAttribute="trailing" constant="50" id="mHs-FS-3DF"/>
                             <constraint firstItem="IRw-0g-3QQ" firstAttribute="top" secondItem="pgj-SM-H6W" secondAttribute="bottom" constant="10" id="pkQ-tN-Ow6"/>
-                            <constraint firstItem="XFr-qU-M5e" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="41" id="vk9-oL-zG9"/>
+                            <constraint firstItem="dev-dg-MJG" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="40" id="qAK-kZ-bHH"/>
+                            <constraint firstItem="XFr-qU-M5e" firstAttribute="top" secondItem="dev-dg-MJG" secondAttribute="bottom" id="qmE-bb-hqy"/>
+                            <constraint firstItem="dev-dg-MJG" firstAttribute="top" secondItem="IRw-0g-3QQ" secondAttribute="bottom" constant="5" id="tXh-k5-ekd"/>
+                            <constraint firstItem="XFr-qU-M5e" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="40" id="vk9-oL-zG9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2rH-H4-Gm7"/>
                     </view>

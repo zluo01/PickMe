@@ -13,8 +13,8 @@ import FirebaseUI
 import FirebaseDatabase
 import ExpandingMenu
 
-class UserProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, FUIAuthDelegate{
-
+class UserProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITableViewDataSource, UITableViewDelegate, FUIAuthDelegate{
+    
     @IBOutlet weak var myImageView: UIImageView!
     
     @IBOutlet weak var name: UILabel!
@@ -26,22 +26,31 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var tableView: UITableView!
     var backFromEdit = false
     
+    //    var takens : [[String]] = [[]]
+    //    var favs : [String] = []
+    var array = [[String]]()
+    var seg = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // first time major minor, create container
         if UserDefaults.standard.stringArray(forKey: "majorMinor") == nil{
-            print(1)
-            let array : [String] = ["None","None","None"]
-            UserDefaults.standard.set(array, forKey: "majorMinor")
+            UserDefaults.standard.set(["None","None","None"], forKey: "majorMinor")
         }
-        
         reloadAllData()
-     
+        
         // create following buttons
         configureExpandingMenuButton()
-
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        loadArray()
+        print(array)
+        UserDefaults.standard.synchronize()
+        tableView.reloadData()
         // Todo display class taken or favor class table view
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         if Auth.auth().currentUser == nil {
@@ -56,15 +65,89 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             self.present(alertController, animated: true, completion: nil)
             backFromEdit = false
         }
+        
+        (seg == 1) ? loadFav() : loadArray()
+        tableView.reloadData()
     }
     
     //Todo implement
     @IBAction func tableSwitch(_ sender: UISegmentedControl) {
-        // if class taken
-        // reload class taken to tableview
+        seg = sender.selectedSegmentIndex
+        (sender.selectedSegmentIndex == 0) ? loadArray() : loadFav()
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var myCell = tableView.dequeueReusableCell(withIdentifier: "theCell")
         
-        // if favor
-        //reload favor class to tableview
+        if myCell == nil {
+            myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "theCell")
+        }
+        
+        if ( array[indexPath.row].count != 0){
+            
+            myCell?.textLabel!.text = array[indexPath.row][0]
+            
+            if(seg == 0){
+                myCell?.detailTextLabel!.text = "Taken at semester \(array[indexPath.row][1]) "
+            }
+            else{
+                myCell?.detailTextLabel!.text = ""
+            }
+        }
+        return myCell!
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            var deleted = array.remove(at: indexPath.row)
+            var courses : [String] = []
+            
+            if(seg == 0){
+                for eachC in array{
+                    if(eachC[1] == deleted[1]){
+                        courses.append(eachC[0])
+                    }
+                }
+                UserDefaults.standard.set(courses, forKey: String(deleted[1]))
+            } else{
+                for eachC in array{
+                    courses.append(eachC[0])
+                }
+                UserDefaults.standard.set(courses, forKey: "fav")
+            }
+            UserDefaults.standard.synchronize()
+            tableView.reloadData()
+            
+            if (isLogIn()) {
+                upLoadDelete()
+            }
+            
+        }
+        
+    }
+    
+    func upLoadDelete(){
+        if Auth.auth().currentUser != nil {
+            var dict = [String: String]()
+            for i in 1...8 {
+                let course = getTaken(String(i))
+                if course.count > 0 {
+                    for j in 0...course.count - 1 {
+                        dict[String(i * 10 + j)] = course[j]
+                    }
+                }
+            }
+            let ref = Database.database().reference()
+            ref.child("profile").child(Auth.auth().currentUser!.uid).child("taken").setValue(dict)
+            ref.child("profile").child(Auth.auth().currentUser!.uid).child("favorites").setValue(getFav())
+        }
     }
     
     // Todo implement login logout
@@ -79,6 +162,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             authUI?.delegate = self
             let authViewController = authUI!.authViewController()
             present(authViewController, animated: true, completion: nil)
+            
         } else { // logout here
             let authUI = FUIAuth.defaultAuthUI()
             do {
@@ -90,6 +174,12 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
                 print("You have logged out!")
                 reloadAllData()
                 userActionButton.title = "Login"
+                
+                UserDefaults.standard.set(["false"], forKey: "login")
+                UserDefaults.standard.synchronize()
+                print((UserDefaults.standard.stringArray(forKey: "login") ?? [String]())[0].compare("false").rawValue)
+                print("i am fucing here morons \(isLogIn())")
+                
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
@@ -100,20 +190,26 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         if error != nil {
             return
         }
+        UserDefaults.standard.set(["true"], forKey: "login")
+        
+        print(isLogIn())
+        UserDefaults.standard.synchronize()
         //reload all data
+       
         reloadAllData()
+        
+        tableView.reloadData()
     }
     
     func reloadAllData() {
-        print("reloadAllData")
+        //        print("reloadAllData")
         reloadNameAndMajor()
         reloadImage()
     }
     
     func reloadNameAndMajor() {
-        print("reloadNameAndMajor")
+        //        print("reloadNameAndMajor")
         if Auth.auth().currentUser == nil {
-            print(2)
             firstMajorLabel.text = getMajorMinor(0)
             secondMajorLabel.text = getMajorMinor(1)
             minorLabel.text = getMajorMinor(2)
@@ -127,10 +223,10 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
                 var profile_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, Any>>
                 if profile_data.keys.contains((Auth.auth().currentUser?.uid)!) { // has profile data on database
                     if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("first") {
-                        self.firstMajorLabel.text = profile_data[(Auth.auth().currentUser?.uid)!]!["firstMajor"] as? String
+                        self.firstMajorLabel.text = profile_data[(Auth.auth().currentUser?.uid)!]!["first"] as? String
                     }
                     if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("second") {
-                        self.secondMajorLabel.text = profile_data[(Auth.auth().currentUser?.uid)!]!["secondMajor"] as? String
+                        self.secondMajorLabel.text = profile_data[(Auth.auth().currentUser?.uid)!]!["second"] as? String
                     }
                     if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
                         self.minorLabel.text = profile_data[(Auth.auth().currentUser?.uid)!]!["minor"] as? String
@@ -147,14 +243,17 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
                     if profile_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("taken") {
                         var taken : [Int : [String]] = [ 1 : [], 2 : [], 3 : [], 4:[],5:[],6:[],7:[],8:[]]
                         for (semester, course) in profile_data[(Auth.auth().currentUser?.uid)!]!["taken"] as! Dictionary<String, String> {
-                            let s = Int(semester[...0])!
-                            taken[s]!.append(course)
+                            if ( course != "DUMMY" ){
+                                let s = Int(semester[...0])!
+                                taken[s]!.append(course)
+                            }
                         }
                         
                         for i in 1...8 {
                             UserDefaults.standard.set(taken[i] , forKey: String(i))
                         }
                     }
+
                 } else { // create container on the database
                     let currentUser = Auth.auth().currentUser!
                     var dict = Dictionary<String, Any>()
@@ -170,7 +269,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     }
     
     func reloadImage() {
-        print("reloadImage")
+        //        print("reloadImage")
         if Auth.auth().currentUser == nil {
             myImageView.image = UIImage(named: "user_male@3x.png")
         }
@@ -209,11 +308,36 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         menuButton.addMenuItems([edit])
         
         menuButton.willPresentMenuItems = { (menu) -> Void in
-            print("MenuItems will present.")
+            //            print("MenuItems will present.")
         }
         
         menuButton.didDismissMenuItems = { (menu) -> Void in
-            print("MenuItems dismissed.")
+            //            print("MenuItems dismissed.")
         }
     }
+    
+    func loadArray(){
+        
+        array = [[String]]()
+        for i in 1...8 {
+            if UserDefaults.standard.stringArray(forKey: String(i)) != nil{
+                let courseSe = getTaken(String(i))
+                for each in courseSe{
+                    if(each != "DUMMY"){
+                        array.append([each, String(i)])
+                    }
+                }
+            }
+        }
+    }
+    
+    func loadFav(){
+        array = []
+        let favs = getFav()
+        for each in favs{
+            array.append([each])
+        }
+    }
+    
+    @IBAction func unwindToProfile(_ sender: UIStoryboardSegue){}
 }
