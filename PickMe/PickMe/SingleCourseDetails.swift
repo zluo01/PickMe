@@ -86,11 +86,9 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
 //        // add default code here
         
         if UserDefaults.standard.stringArray(forKey: self.selectedText) == nil{
-            
             var coursesArray : [String] = []
             coursesArray.append(details["course_code"]!)
             UserDefaults.standard.set(coursesArray, forKey: self.selectedText)
-            
         }
         else{
             var coursesArray = UserDefaults.standard.stringArray(forKey: self.selectedText) ?? [String]()
