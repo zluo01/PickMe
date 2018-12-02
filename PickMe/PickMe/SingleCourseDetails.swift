@@ -80,17 +80,13 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     func addClass(_ courseCode:String, _ semester:String) {
         print("Called addClass")
-        // Todo add userDefault for guest users
-//        // no matter what should add to user default
-//        print("Add to user default")
-//        // add default code here
         
+        // if first time adding, create local container
         if UserDefaults.standard.stringArray(forKey: self.selectedText) == nil{
             var coursesArray : [String] = []
             coursesArray.append(details["course_code"]!)
             UserDefaults.standard.set(coursesArray, forKey: self.selectedText)
-        }
-        else{
+        } else{ // if already has container, direct added
             var coursesArray = UserDefaults.standard.stringArray(forKey: self.selectedText) ?? [String]()
             
             if(!coursesArray.contains(details["course_code"]!)){
@@ -99,39 +95,43 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
             }
         }
         
-        // if user is loged in, then also add to database
-        if Auth.auth().currentUser != nil {
-            let ref = Database.database().reference()
-            
-            ref.observe(.value, with: {
-                snapshot in
-                let users = (snapshot.value! as! Dictionary<String, Any>)["users"] as! Dictionary<String, Dictionary<String, String>>
-                let currentUser = Auth.auth().currentUser!
-                print(users)
-                print(currentUser)
-//                if users.keys.contains(currentUser.uid) {
-//                    var userDict = users[currentUser.uid]!
-//                    var added = false
-//                    if userDict.keys.contains(courseCode) && userDict[courseCode] != semester{
-//                        print("In if")
-//                        let alertController = UIAlertController(title: "Class Already Added", message: "You have already added this class.", preferredStyle: .alert)
-//                        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                        alertController.addAction(cancelAction)
-//                        self.present(alertController, animated: true, completion: nil)
-//                    }
-//                    else {
-//                        print("In else")
-//                        userDict[courseCode] = semester
-//                        ref.child("users").child(currentUser.uid).setValue(userDict)
-//                        added = true
-//                    }
-//                }
-//                else {
-//                    var newDict = Dictionary<String, String>()
-//                    newDict[courseCode] = semester
-//                    ref.child("users").child(currentUser.uid).setValue(newDict)
-//                }
-            })
+        // if user is logged in, then add to database
+        // Todo
+        if (!isGuest) {
+            // if user is loged in, then also add to database
+            if Auth.auth().currentUser != nil {
+                let ref = Database.database().reference()
+                
+                ref.observe(.value, with: {
+                    snapshot in
+                    let users = (snapshot.value! as! Dictionary<String, Any>)["users"] as! Dictionary<String, Dictionary<String, String>>
+                    let currentUser = Auth.auth().currentUser!
+                    print(users)
+                    print(currentUser)
+                    //                if users.keys.contains(currentUser.uid) {
+                    //                    var userDict = users[currentUser.uid]!
+                    //                    var added = false
+                    //                    if userDict.keys.contains(courseCode) && userDict[courseCode] != semester{
+                    //                        print("In if")
+                    //                        let alertController = UIAlertController(title: "Class Already Added", message: "You have already added this class.", preferredStyle: .alert)
+                    //                        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    //                        alertController.addAction(cancelAction)
+                    //                        self.present(alertController, animated: true, completion: nil)
+                    //                    }
+                    //                    else {
+                    //                        print("In else")
+                    //                        userDict[courseCode] = semester
+                    //                        ref.child("users").child(currentUser.uid).setValue(userDict)
+                    //                        added = true
+                    //                    }
+                    //                }
+                    //                else {
+                    //                    var newDict = Dictionary<String, String>()
+                    //                    newDict[courseCode] = semester
+                    //                    ref.child("users").child(currentUser.uid).setValue(newDict)
+                    //                }
+                })
+            }
         }
         PickView.isHidden = true
     }
@@ -166,22 +166,21 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         func favorClass() {
             // add to user default
-            
+            // first time favor class, create container
             if UserDefaults.standard.stringArray(forKey: "fav") == nil{
-                
                 var favArray : [String] = []
                 favArray.append(details["course_code"]!)
                 UserDefaults.standard.set(favArray, forKey: "fav")
-                
-            }
-            else{
-                
+            } else{ // direct added favor class
                 var favArray = UserDefaults.standard.stringArray(forKey: "fav") ?? [String]()
-                
                 if(!favArray.contains(details["course_code"]!)){
                     favArray.append(details["course_code"]!)
                     UserDefaults.standard.set(favArray, forKey: "fav")
                 }
+            }
+            
+            if(!isGuest) {
+                // add to database
             }
         }
         

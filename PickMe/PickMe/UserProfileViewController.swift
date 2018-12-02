@@ -30,19 +30,19 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         reloadAllData()
-        
+     
+        // create following buttons
         configureExpandingMenuButton()
         
+        // first time major minor, create container
         if UserDefaults.standard.stringArray(forKey: "majorMinor") == nil{
-            
             let array : [String] = ["None","None","None"]
             UserDefaults.standard.set(array, forKey: "majorMinor")
-            
         }
         
+        // Todo display class taken or favor class table view
     }
     override func viewWillAppear(_ animated: Bool) {
-        
         if Auth.auth().currentUser == nil {
             userActionButton.title = "Login"
         } else { // Todo double check here
@@ -72,15 +72,11 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             // go to login page
             // identifer is ProfileToLogin
             let authUI = FUIAuth.defaultAuthUI()
-            
             guard authUI != nil else {
                 return
             }
-            
             authUI?.delegate = self
-            
             let authViewController = authUI!.authViewController()
-            
             present(authViewController, animated: true, completion: nil)
         } else { // logout here
             let authUI = FUIAuth.defaultAuthUI()
@@ -92,6 +88,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
                 self.present(alertController, animated: true, completion: nil)
                 print("You have logged out!")
                 reloadAllData()
+                userActionButton.title = "Login"
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
@@ -102,10 +99,8 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         if error != nil {
             return
         }
-        
         //reload all data
         reloadAllData()
-        
     }
     
     func reloadAllData() {
@@ -117,9 +112,9 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     func reloadNameAndMajor() {
         print("reloadNameAndMajor")
         if Auth.auth().currentUser == nil {
-            firstMajorLabel.text = "Major / Minor"
-            secondMajorLabel.text = "Major / Minor"
-            minorLabel.text = "Major / Minor"
+            firstMajorLabel.text = getMajorMinor(0)
+            secondMajorLabel.text = getMajorMinor(1)
+            minorLabel.text = getMajorMinor(2)
             name.text = "Guest"
         }
         else {
@@ -162,7 +157,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindToProfile(_ sender: UIStoryboardSegue) {}
+//    @IBAction func unwindToProfile(_ sender: UIStoryboardSegue) {}
     
     fileprivate func configureExpandingMenuButton() {
         let menuButtonSize: CGSize = CGSize(width: 64.0, height: 64.0)

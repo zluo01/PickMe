@@ -13,9 +13,6 @@ import FirebaseAuth
 import FirebaseUI
 
 class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-   
-    
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var secondMajorField: UITextField!
@@ -275,18 +272,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     //prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destination = segue.destination as! UserProfileViewController
+        let destination = segue.destination as! UserProfileViewController
         destination.backFromEdit = true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
