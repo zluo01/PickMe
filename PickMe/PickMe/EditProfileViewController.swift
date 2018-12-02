@@ -214,18 +214,21 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func setupPickerView() {
-        let picker = UIPickerView()
-        picker.dataSource = self
-        picker.delegate = self
+        let pickerMajor = UIPickerView()
+        pickerMajor.dataSource = self
+        pickerMajor.delegate = self
+        let pickerMinor = UIPickerView()
+        pickerMinor.dataSource = self
+        pickerMinor.delegate = self
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: "donePicker")
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
-            firstMajorField.inputView = picker
-            secondMajorField.inputView = picker
-            minorField.inputView = picker
+        firstMajorField.inputView = pickerMajor
+        secondMajorField.inputView = pickerMajor
+        minorField.inputView = pickerMinor
         firstMajorField.inputAccessoryView = toolBar
         secondMajorField.inputAccessoryView = toolBar
         minorField.inputAccessoryView = toolBar
