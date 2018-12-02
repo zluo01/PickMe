@@ -30,13 +30,11 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         // fetch data
         fetchDataFromFirebase("")
         
+        // defualt as guest, first time user update local data
         if UserDefaults.standard.stringArray(forKey: "login") == nil{
-            
-            let array : [Bool] = [false]
+            let array : [String] = ["false"]
             UserDefaults.standard.set(array, forKey: "login")
-            
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
