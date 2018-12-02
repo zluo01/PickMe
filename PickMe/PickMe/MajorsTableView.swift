@@ -24,6 +24,7 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         majorsTable.dataSource = self
+        majorsTable.register(UITableViewCell.self, forCellReuseIdentifier: "theCell")
         majorsTable.delegate = self
         majorSearch.delegate = self
         
