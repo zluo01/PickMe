@@ -59,7 +59,7 @@ class CoursesTableView: UIViewController,UITableViewDataSource, UITableViewDeleg
         if myCell == nil {
             myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "theCell")
         }
-        
+        print("\(Array(displayCourses.keys).sorted()) => \(indexPath.row)")
         let course_id = Array(displayCourses.keys).sorted()[indexPath.row]
         myCell?.textLabel!.text =  course_id
         myCell?.detailTextLabel?.text = " - " + displayCourses[course_id]!["title"]!
