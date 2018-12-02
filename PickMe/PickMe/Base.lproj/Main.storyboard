@@ -419,9 +419,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YE8-Df-8H0" userLabel="courses">
                                 <rect key="frame" x="30" y="603" width="315" height="0.0"/>
                                 <subviews>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg3-9X-53v">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg3-9X-53v">
                                         <rect key="frame" x="-30" y="-603" width="0.0" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -450,6 +450,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="PC7-qH-wEz" firstAttribute="width" secondItem="yeY-SR-ZeN" secondAttribute="width" id="6zl-da-cG6"/>
+                                    <constraint firstItem="KbJ-ja-rox" firstAttribute="width" secondItem="hYz-km-0oL" secondAttribute="width" id="WzQ-8r-Uad"/>
+                                    <constraint firstItem="fg3-9X-53v" firstAttribute="width" secondItem="KbJ-ja-rox" secondAttribute="width" id="bt7-zA-rSm"/>
+                                    <constraint firstItem="hYz-km-0oL" firstAttribute="width" secondItem="PC7-qH-wEz" secondAttribute="width" id="mcR-1l-krt"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
