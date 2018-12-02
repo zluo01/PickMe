@@ -44,7 +44,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundView = UIColor.lightGray
+        tableView.backgroundColor = UIColor.lightGray
         loadArray()
         print(array)
         UserDefaults.standard.synchronize()
