@@ -65,7 +65,6 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             self.present(alertController, animated: true, completion: nil)
             backFromEdit = false
         }
-        
         (seg == 1) ? loadFav() : loadArray()
         tableView.reloadData()
     }
@@ -217,6 +216,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         }
         else {
             name.text = Auth.auth().currentUser?.displayName != nil ? Auth.auth().currentUser?.displayName! : "Anonymous"
+            
             let ref = Database.database().reference()
             ref.observe(.value, with: {
                 snapshot in
@@ -271,10 +271,10 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     func reloadImage() {
         //        print("reloadImage")
         if Auth.auth().currentUser == nil {
-            myImageView.image = UIImage(named: "user_male@3x.png")
+            myImageView.image = UIImage(named: "POI")
         }
         else {
-            let placeholderImage = UIImage(named: "user_male@3x.png")
+            let placeholderImage = UIImage(named: "POI")
             let storageRef = Storage.storage().reference()
             let uid = Auth.auth().currentUser?.uid
             let downloadRef = storageRef.child("user/\(uid!)")
