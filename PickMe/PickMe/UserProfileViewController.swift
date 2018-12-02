@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 import FirebaseUI
 import FirebaseDatabase
@@ -25,37 +26,19 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var tableView: UITableView!
     var backFromEdit = false
     
-    //    @IBAction func importImage(_ sender: UIButton) {
-//        let image = UIImagePickerController()
-//        image.delegate = self
-//        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
-//        image.allowsEditing = true
-//        self.present(image, animated: true){
-//            //After it is complete
-//        }
-//    }
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-//            myImageView.image = image
-//        }
-//        else{
-//            //Error message
-//        }
-//        self.dismiss(animated: true, completion: nil)
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reloadAllData()
         
-      
         configureExpandingMenuButton()
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         if Auth.auth().currentUser == nil {
             userActionButton.title = "Login"
         } else { // Todo double check here
-            userActionButton.title = "Logout"
+            userActionButton.title = "Log out"
         }
         if backFromEdit {
             let alertController = UIAlertController(title: "Profile Update Success", message: "You have successfully updated your profile!", preferredStyle: .alert)
@@ -118,6 +101,13 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     }
     
     func reloadAllData() {
+        print("reloadAllData")
+        reloadNameAndMajor()
+        reloadImage()
+    }
+    
+    func reloadNameAndMajor() {
+        print("reloadNameAndMajor")
         if Auth.auth().currentUser == nil {
             firstMajorLabel.text = "Major / Minor"
             secondMajorLabel.text = "Major / Minor"
@@ -131,18 +121,45 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             ref.observe(.value, with: {
                 snapshot in
                 user_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, String>>
+                if user_data.keys.contains((Auth.auth().currentUser?.uid)!) {
+                    if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("firstMajor") {
+                        self.firstMajorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["firstMajor"]
+                    }
+                    if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("secondMajor") {
+                        self.secondMajorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["secondMajor"]
+                    }
+                    if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
+                        self.minorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["minor"]
+                    }
+                }
             })
-            if user_data.keys.contains((Auth.auth().currentUser?.uid)!) {
-                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("first_major") {
-                    firstMajorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["first_major"]
-                }
-                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("second_major") {
-                    secondMajorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["second_major"]
-                }
-                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
-                    minorLabel.text = user_data[(Auth.auth().currentUser?.uid)!]!["minor"]
-                }
-            }
+        }
+    }
+    
+    func reloadImage() {
+        print("reloadImage")
+        if Auth.auth().currentUser == nil {
+            //print("In if")
+            myImageView.image = UIImage(named: "user_male@3x.png")
+        }
+        else {
+            //print("In else")
+            let placeholderImage = UIImage(named: "user_male@3x.png")
+            let storageRef = Storage.storage().reference()
+            let uid = Auth.auth().currentUser?.uid
+            let downloadRef = storageRef.child("user/\(uid!)")
+//            downloadRef.getData(maxSize: 3*1024*1024, completion: { data, error in
+//                if let error = error {
+//                    print("Failed to load image")
+//                    print(error.localizedDescription)
+//                }
+//                else {
+//                    let image = UIImage(data: data!)
+//
+//                    self.myImageView.image = image!
+//                }
+//            })
+            myImageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
         }
     }
     override func didReceiveMemoryWarning() {

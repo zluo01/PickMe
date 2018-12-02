@@ -13,6 +13,7 @@ target 'PickMe' do
   pod 'SwiftyPlistManager'
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Storage'
+  pod 'FirebaseUI/Storage'
   
   target 'PickMeTests' do
     inherit! :search_paths
