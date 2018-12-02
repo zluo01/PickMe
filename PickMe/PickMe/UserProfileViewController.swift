@@ -173,8 +173,8 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
                 self.present(alertController, animated: true, completion: nil)
                 print("You have logged out!")
                 reloadAllData()
-                userActionButton.title = "Login"
-                
+                userActionButton.title = "Login/Register"
+                reloadAllData()
                 UserDefaults.standard.set(["false"], forKey: "login")
                 UserDefaults.standard.synchronize()
                 print((UserDefaults.standard.stringArray(forKey: "login") ?? [String]())[0].compare("false").rawValue)
@@ -265,6 +265,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
                     ref.child("profile").child(currentUser.uid).setValue(dict)
                 }
             })
+            
         }
         
     }
@@ -279,19 +280,24 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             
             
             let storage = Storage.storage()
-            
+            let placeholderImage = UIImage(named: "POI")
             let downloadURL = Auth.auth().currentUser?.photoURL?.absoluteString
-            let downloadRef = storage.reference(forURL: downloadURL!)
-            //myImageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
-            downloadRef.getData(maxSize: 3*1024*1024, completion: {(data, error) in
-                if let error = error {
-                    print("Download error: \(error.localizedDescription)")
-                }
-                else {
-                    let image = UIImage(data: data!)
-                    self.myImageView.image = image
-                }
-            })
+            if let downloadURL = downloadURL {
+                let downloadRef = storage.reference(forURL: downloadURL)
+                //myImageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
+                downloadRef.getData(maxSize: 3*1024*1024, completion: {(data, error) in
+                    if let error = error {
+                        print("Download error: \(error.localizedDescription)")
+                    }
+                    else {
+                        let image = UIImage(data: data!)
+                        self.myImageView.image = image
+                    }
+                })
+            }
+            else {
+                self.myImageView.image = placeholderImage
+            }
         }
     }
     override func didReceiveMemoryWarning() {

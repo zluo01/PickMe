@@ -66,17 +66,24 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     func reloadImage() {
         print("reloadImage")
         let storage = Storage.storage()
+        let placeholderImage = UIImage(named: "POI")
         let downloadURL = Auth.auth().currentUser?.photoURL?.absoluteString
-        let downloadRef = storage.reference(forURL: downloadURL!)
-        downloadRef.getData(maxSize: 3*1024*1024, completion: {(data, error) in
-            if let error = error {
-                print("Download error: \(error.localizedDescription)")
-            }
-            else {
-                let image = UIImage(data: data!)
-                self.imageView.image = image
-            }
-        })
+        if let downloadURL = downloadURL {
+            let downloadRef = storage.reference(forURL: downloadURL)
+            //myImageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
+            downloadRef.getData(maxSize: 3*1024*1024, completion: {(data, error) in
+                if let error = error {
+                    print("Download error: \(error.localizedDescription)")
+                }
+                else {
+                    let image = UIImage(data: data!)
+                    self.imageView.image = image
+                }
+            })
+        }
+        else {
+            self.imageView.image = placeholderImage
+        }
     }
     
     //image view function begins
