@@ -87,7 +87,7 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
             recommend()
         }
     }
-
+    
     @IBAction func cancelAction(_ sender: UIButton) {
         PickView.isHidden = true
     }
@@ -114,7 +114,7 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
         UserDefaults.standard.synchronize()
         
         // if user is logged in, then add to database
-         print("add class \(isLogIn())")
+        print("add class \(isLogIn())")
         if (isLogIn()) {
             if Auth.auth().currentUser != nil {
                 var dict = [String: String]()
@@ -142,13 +142,10 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func recommend() {
         if Auth.auth().currentUser != nil {
             let ref = Database.database().reference()
-            ref.observe(.value, with: {
-                snapshot in
-                let profile_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, Any>>
+            ref.child("profile").observeSingleEvent(of: .value, with: { (snapshot) in
                 var map = [String : Int]()
-                for user_id in profile_data {
-                    let courses = user_id.value["taken"] as! Dictionary<String, String>
-                    print(courses)
+                for (_ , value) in ((snapshot.value as! Dictionary<String, Any>) as! Dictionary<String, Dictionary<String, Any>>) {
+                    let courses = value["taken"] as! Dictionary<String, String>
                     if (courses.values.contains(self.courseId.text!)) {
                         for i in self.getSemester(courses, self.courseId.text!) {
                             for s in courses.keys {
@@ -169,24 +166,27 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 self.c_three.text = "None"
                 self.c_four.text = "None"
                 self.c_five.text = "None"
+                print("recommend \(recommend) => \(recommend.count)")
                 if recommend.count > 0 {
-                    if recommend.count < 2 {
+                    if recommend.count >= 1 {
                         self.c_one.text = recommend[0].key
                     }
-                    if recommend.count < 3 {
+                    if recommend.count >= 2 {
                         self.c_two.text = recommend[1].key
                     }
-                    if recommend.count < 4 {
+                    if recommend.count >= 3 {
                         self.c_three.text = recommend[2].key
                     }
-                    if recommend.count < 5 {
+                    if recommend.count >= 4 {
                         self.c_four.text = recommend[3].key
                     }
-                    if recommend.count < 6 {
+                    if recommend.count >= 5 {
                         self.c_five.text = recommend[4].key
                     }
                 }
-            })
+            }) { (error) in
+                print(error.localizedDescription)
+            }
         }
     }
     
