@@ -69,7 +69,7 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
         configureExpandingMenuButton()
         
         if(isLogIn()){
-            //recommend()
+            recommend()
         }
     }
     
@@ -132,7 +132,8 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 let profile_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, Any>>
                 var map = [String : Int]()
                 for user_id in profile_data {
-                    let courses = user_id.value as! Dictionary<String, String>
+                    let courses = user_id.value["taken"] as! Dictionary<String, String>
+                    print(courses)
                     if (courses.values.contains(self.courseId.text!)) {
                         for i in self.getSemester(courses, self.courseId.text!) {
                             for s in courses.keys {
