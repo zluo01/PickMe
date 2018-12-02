@@ -139,26 +139,13 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     func reloadImage() {
         print("reloadImage")
         if Auth.auth().currentUser == nil {
-            //print("In if")
             myImageView.image = UIImage(named: "user_male@3x.png")
         }
         else {
-            //print("In else")
             let placeholderImage = UIImage(named: "user_male@3x.png")
             let storageRef = Storage.storage().reference()
             let uid = Auth.auth().currentUser?.uid
             let downloadRef = storageRef.child("user/\(uid!)")
-//            downloadRef.getData(maxSize: 3*1024*1024, completion: { data, error in
-//                if let error = error {
-//                    print("Failed to load image")
-//                    print(error.localizedDescription)
-//                }
-//                else {
-//                    let image = UIImage(data: data!)
-//
-//                    self.myImageView.image = image!
-//                }
-//            })
             myImageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
         }
     }
@@ -177,7 +164,15 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         
         let edit = ExpandingMenuItem(size: menuButtonSize, title: "Edit", image: UIImage(named: "heart")!, highlightedImage: UIImage(named: "heart-highlight")!, backgroundImage: UIImage(named: "chooser-moment-button"), backgroundHighlightedImage: UIImage(named: "chooser-moment-button-highlighted")) { () -> Void in
             // add action here
-            self.performSegue(withIdentifier: "profileToEdit", sender: self)
+            if Auth.auth().currentUser != nil {
+                self.performSegue(withIdentifier: "profileToEdit", sender: self)
+            }
+            else {
+                let alertController = UIAlertController(title: "User Not Logged In", message: "You have to log in before you can edit your profile!", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
         
         menuButton.addMenuItems([edit])

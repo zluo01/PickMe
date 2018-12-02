@@ -27,9 +27,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     var minorArray = [String]()
     
     override func viewDidLoad() {
-        if let origName = Auth.auth().currentUser?.displayName {
-            nameField.text = origName
-        }
+        reloadAllData()
         super.viewDidLoad()
         majorArray.append("None")
         minorArray.append("None")
@@ -40,10 +38,48 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         // Do any additional setup after loading the view.
     }
     
-   
+    //reload data
+    func reloadAllData() {
+        print("reloadAllData")
+        reloadNameAndMajor()
+        reloadImage()
+    }
+    
+    func reloadNameAndMajor() {
+        print("reloadNameAndMajor")
+        nameField.text = Auth.auth().currentUser?.displayName != nil ? Auth.auth().currentUser?.displayName! : "Anonymous"
+        var user_data = Dictionary<String, Dictionary<String, String>>()
+        let ref = Database.database().reference()
+        ref.observe(.value, with: {
+            snapshot in
+            user_data = (snapshot.value! as! Dictionary<String, Any>)["profile"] as! Dictionary<String, Dictionary<String, String>>
+            if user_data.keys.contains((Auth.auth().currentUser?.uid)!) {
+                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("firstMajor") {
+                    self.firstMajorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["firstMajor"]
+                }
+                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("secondMajor") {
+                    self.secondMajorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["secondMajor"]
+                }
+                if user_data[(Auth.auth().currentUser?.uid)!]!.keys.contains("minor") {
+                    self.minorField.text = user_data[(Auth.auth().currentUser?.uid)!]!["minor"]
+                }
+            }
+        })
+        
+    }
+    
+    func reloadImage() {
+        print("reloadImage")
+        let placeholderImage = UIImage(named: "user_male@3x.png")
+        let storageRef = Storage.storage().reference()
+        let uid = Auth.auth().currentUser?.uid
+        let downloadRef = storageRef.child("user/\(uid!)")
+        imageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
+    }
     
     //image view function begins
     func setupImageView() {
+        imageView.layer.cornerRadius = imageView.bounds.height/2
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(importImage))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(imageTap)
