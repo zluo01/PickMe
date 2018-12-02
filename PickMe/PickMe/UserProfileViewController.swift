@@ -63,6 +63,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
+            reloadAllData()
             backFromEdit = false
         }
         (seg == 1) ? loadFav() : loadArray()
@@ -269,16 +270,28 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     }
     
     func reloadImage() {
+        print("Inside reload image")
         //        print("reloadImage")
         if Auth.auth().currentUser == nil {
             myImageView.image = UIImage(named: "POI")
         }
         else {
-            let placeholderImage = UIImage(named: "POI")
-            let storageRef = Storage.storage().reference()
-            let uid = Auth.auth().currentUser?.uid
-            let downloadRef = storageRef.child("user/\(uid!)")
-            myImageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
+            
+            
+            let storage = Storage.storage()
+            
+            let downloadURL = Auth.auth().currentUser?.photoURL?.absoluteString
+            let downloadRef = storage.reference(forURL: downloadURL!)
+            //myImageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
+            downloadRef.getData(maxSize: 3*1024*1024, completion: {(data, error) in
+                if let error = error {
+                    print("Download error: \(error.localizedDescription)")
+                }
+                else {
+                    let image = UIImage(data: data!)
+                    self.myImageView.image = image
+                }
+            })
         }
     }
     override func didReceiveMemoryWarning() {

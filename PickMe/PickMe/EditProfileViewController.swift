@@ -65,11 +65,18 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func reloadImage() {
         print("reloadImage")
-        let placeholderImage = UIImage(named: "POI")
-        let storageRef = Storage.storage().reference()
-        let uid = Auth.auth().currentUser?.uid
-        let downloadRef = storageRef.child("user/\(uid!)")
-        imageView.sd_setImage(with: downloadRef, placeholderImage: placeholderImage)
+        let storage = Storage.storage()
+        let downloadURL = Auth.auth().currentUser?.photoURL?.absoluteString
+        let downloadRef = storage.reference(forURL: downloadURL!)
+        downloadRef.getData(maxSize: 3*1024*1024, completion: {(data, error) in
+            if let error = error {
+                print("Download error: \(error.localizedDescription)")
+            }
+            else {
+                let image = UIImage(data: data!)
+                self.imageView.image = image
+            }
+        })
     }
     
     //image view function begins
@@ -109,7 +116,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         submitInfo()
         UserDefaults.standard.set([firstMajorField.text, secondMajorField.text, minorField.text], forKey: "majorMinor")
-        self.performSegue(withIdentifier: "backToProfileSegue", sender: self)
+        //self.performSegue(withIdentifier: "backToProfileSegue", sender: self)
     }
     
     func submitInfo() {
@@ -123,6 +130,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
                 changeRequest?.commitChanges(completion: { error in
                     if error == nil {
                         print("Update success")
+                        self.performSegue(withIdentifier: "backToProfileSegue", sender: self)
                     }
                     else {
                         print("Error!")
@@ -137,6 +145,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
             changeRequest?.commitChanges(completion: { error in
                 if error == nil {
                     print("Update success")
+                    self.performSegue(withIdentifier: "backToProfileSegue", sender: self)
                 }
                 else {
                     print("Error!")
