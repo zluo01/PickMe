@@ -18,7 +18,7 @@
 		51C7C9E921A25968008E7CF1 /* PickMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9E821A25968008E7CF1 /* PickMeTests.swift */; };
 		51C7C9F421A25968008E7CF1 /* PickMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7C9F321A25968008E7CF1 /* PickMeUITests.swift */; };
 		54190B18E26B73271C4F77B4 /* Pods_PickMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */; };
-		8497AC3021B387990037B59B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8497AC2F21B387990037B59B /* GoogleService-Info.plist */; };
+		8464AAAB21B3FAB500E98AC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8464AAAA21B3FAB500E98AC0 /* GoogleService-Info.plist */; };
 		8497AC3421B3AA060037B59B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8497AC3321B3AA060037B59B /* GoogleService-Info.plist */; };
 		849B6AA821A8E7FE008A588A /* MajorsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA721A8E7FE008A588A /* MajorsTableView.swift */; };
 		849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA921A8ECC9008A588A /* CoursesTableView.swift */; };
@@ -67,7 +67,7 @@
 		51C7C9F521A25968008E7CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61462861C3C34250DB269093 /* Pods-PickMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D3DBD4F0396C8FBA51ED3F0 /* Pods-PickMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeUITests/Pods-PickMeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8497AC2F21B387990037B59B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8464AAAA21B3FAB500E98AC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8497AC3321B3AA060037B59B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		849B6AA721A8E7FE008A588A /* MajorsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorsTableView.swift; sourceTree = "<group>"; };
 		849B6AA921A8ECC9008A588A /* CoursesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableView.swift; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 				2729C03F21ABA80400ADD65D /* UserProfileViewController.swift */,
 				51C7C9D721A25967008E7CF1 /* Main.storyboard */,
 				51C7C9DC21A25968008E7CF1 /* LaunchScreen.storyboard */,
-				8497AC2F21B387990037B59B /* GoogleService-Info.plist */,
 				8497AC3321B3AA060037B59B /* GoogleService-Info.plist */,
+				8464AAAA21B3FAB500E98AC0 /* GoogleService-Info.plist */,
 				51C7C9DF21A25968008E7CF1 /* Info.plist */,
 				51C0AA3A21B38BAE001FFF0E /* Utils.swift */,
 			);
@@ -303,9 +303,9 @@
 			files = (
 				51C7C9DE21A25968008E7CF1 /* LaunchScreen.storyboard in Resources */,
 				51B56C2D21B12EF8009A6187 /* Assets.xcassets in Resources */,
+				8464AAAB21B3FAB500E98AC0 /* GoogleService-Info.plist in Resources */,
 				8497AC3421B3AA060037B59B /* GoogleService-Info.plist in Resources */,
 				51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */,
-				8497AC3021B387990037B59B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

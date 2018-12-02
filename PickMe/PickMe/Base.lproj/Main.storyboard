@@ -61,7 +61,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="POI" translatesAutoresizingMaskIntoConstraints="NO" id="i0e-oS-tob">
                                 <rect key="frame" x="50" y="69" width="275" height="141"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="141" id="JpC-P3-0EC"/>
                                 </constraints>
@@ -152,7 +152,7 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2rH-H4-Gm7" firstAttribute="trailing" secondItem="dev-dg-MJG" secondAttribute="trailing" constant="40" id="21d-m6-6x6"/>
                             <constraint firstItem="3zW-je-GgQ" firstAttribute="leading" secondItem="2rH-H4-Gm7" secondAttribute="leading" constant="50" id="23J-wn-aAQ"/>
@@ -356,7 +356,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="oKJ-vM-166" secondAttribute="bottom" constant="184" placeholder="YES" id="7cv-MJ-mGz"/>
                                     <constraint firstAttribute="trailing" secondItem="oKJ-vM-166" secondAttribute="trailing" id="Nz2-nn-SPT"/>
@@ -411,7 +411,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.63137254899999995" green="0.94117647059999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2VJ-KB-qBB" firstAttribute="trailing" secondItem="sYT-tM-YMX" secondAttribute="trailing" constant="50" id="DS1-rv-IXJ"/>
                             <constraint firstItem="2VJ-KB-qBB" firstAttribute="trailing" secondItem="zXn-2G-OOy" secondAttribute="trailing" constant="30" id="Hpt-Cs-kih"/>
@@ -534,7 +534,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63137254901960782" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="X7H-UF-pAD"/>
                     </view>
                     <connections>
@@ -555,7 +555,7 @@
         <scene sceneID="I8l-pQ-33v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZHg-LI-Fjy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="EKU-qn-zWS"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="EKU-qn-zWS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tgy-JZ-vzQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -574,7 +574,7 @@
         <scene sceneID="tbW-Sm-9hE">
             <objects>
                 <navigationController title="Reference" automaticallyAdjustsScrollViewInsets="NO" id="rEy-sH-slE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reference" id="JnZ-An-QGz"/>
+                    <tabBarItem key="tabBarItem" title="Reference" image="web" id="JnZ-An-QGz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DAT-9f-uDI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -592,6 +592,8 @@
     </scenes>
     <resources>
         <image name="POI" width="45" height="45"/>
-        <image name="major" width="15" height="15"/>
+        <image name="major" width="30" height="30"/>
+        <image name="user" width="30" height="30"/>
+        <image name="web" width="30" height="30"/>
     </resources>
 </document>
