@@ -190,14 +190,12 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
             return
         }
         UserDefaults.standard.set(["true"], forKey: "login")
-        
-        print(isLogIn())
         UserDefaults.standard.synchronize()
         //reload all data
-       
+
         reloadAllData()
         
-        tableView.reloadData()
+
     }
     
     func reloadAllData() {
@@ -253,7 +251,8 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
                             UserDefaults.standard.set(taken[i] , forKey: String(i))
                         }
                     }
-
+                    (self.seg == 1) ? self.loadFav() : self.loadArray()
+                    self.tableView.reloadData()
                 } else { // create container on the database
                     let currentUser = Auth.auth().currentUser!
                     var dict = Dictionary<String, Any>()
@@ -266,6 +265,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
                 }
             })
         }
+        
     }
     
     func reloadImage() {
