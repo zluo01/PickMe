@@ -57,6 +57,12 @@ class MajorsTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         if myCell == nil {
             myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "theCell")
         }
+        if indexPath.row%2 == 0 {
+            myCell?.backgroundColor = UIColor(red: 230/255, green: 244/255, blue: 242/255, alpha: 0.5)
+        }
+        else {
+            myCell?.backgroundColor = UIColor(red: 230/255, green: 244/255, blue: 242/255, alpha: 0)
+        }
         myCell?.textLabel!.text = Array(majors.keys).sorted()[indexPath.row]
         return myCell!
     }

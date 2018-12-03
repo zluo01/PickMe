@@ -22,7 +22,7 @@
 		849B6AAA21A8ECC9008A588A /* CoursesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B6AA921A8ECC9008A588A /* CoursesTableView.swift */; };
 		8C5AA0BDB8AF125644152ECB /* Pods_PickMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */; };
 		9140D840854732857EAFF0BC /* Pods_PickMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFA87EE9863B79607CF5306 /* Pods_PickMeUITests.framework */; };
-		FF6B368E21B44CCB00DE98D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF6B368D21B44CCB00DE98D7 /* GoogleService-Info.plist */; };
+		FF92F71521B4FFC40018FE3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF92F71421B4FFC40018FE3D /* GoogleService-Info.plist */; };
 		FFADFB6521AB5E7C001194C9 /* RequirementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */; };
 		FFADFB6721AB69D2001194C9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADFB6621AB69D2001194C9 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +72,7 @@
 		DE0CB5097ED0D10E58BDA872 /* Pods-PickMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickMeTests/Pods-PickMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5DF19B0E43A2441455FBDAA /* Pods_PickMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB97A235093DC30F47B02A39 /* Pods_PickMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF6B368D21B44CCB00DE98D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF92F71421B4FFC40018FE3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFADFB6421AB5E7B001194C9 /* RequirementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsViewController.swift; sourceTree = "<group>"; };
 		FFADFB6621AB69D2001194C9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +140,7 @@
 		51C7C9D221A25967008E7CF1 /* PickMe */ = {
 			isa = PBXGroup;
 			children = (
-				FF6B368D21B44CCB00DE98D7 /* GoogleService-Info.plist */,
+				FF92F71421B4FFC40018FE3D /* GoogleService-Info.plist */,
 				51B56C2C21B12EF8009A6187 /* Assets.xcassets */,
 				51C7C9D321A25967008E7CF1 /* AppDelegate.swift */,
 				849B6AA721A8E7FE008A588A /* MajorsTableView.swift */,
@@ -299,7 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C7C9DE21A25968008E7CF1 /* LaunchScreen.storyboard in Resources */,
-				FF6B368E21B44CCB00DE98D7 /* GoogleService-Info.plist in Resources */,
+				FF92F71521B4FFC40018FE3D /* GoogleService-Info.plist in Resources */,
 				51B56C2D21B12EF8009A6187 /* Assets.xcassets in Resources */,
 				51C7C9D921A25967008E7CF1 /* Main.storyboard in Resources */,
 			);

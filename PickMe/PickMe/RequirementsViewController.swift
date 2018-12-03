@@ -42,6 +42,12 @@ class RequirementsViewController: UIViewController, UITableViewDataSource,  UITa
         }
         
         myCell?.textLabel!.text = Array(majorsMinors.keys).sorted()[indexPath.row]
+        if indexPath.row%2 == 0 {
+            myCell?.backgroundColor = UIColor(red: 230/255, green: 244/255, blue: 242/255, alpha: 0.5)
+        }
+        else {
+            myCell?.backgroundColor = UIColor(red: 230/255, green: 244/255, blue: 242/255, alpha: 0)
+        }
         return myCell!
     }
     
