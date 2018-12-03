@@ -44,7 +44,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = UIColor.lightGray
+        //tableView.backgroundColor = UIColor.lightGray
         loadArray()
         print(array)
         UserDefaults.standard.synchronize()
@@ -87,7 +87,13 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
         if myCell == nil {
             myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "theCell")
         }
-        myCell?.backgroundColor = UIColor.lightGray
+        if indexPath.row%2 == 0 {
+             myCell?.backgroundColor = UIColor(red: 230/255, green: 244/255, blue: 242/255, alpha: 1)
+        }
+        else {
+            myCell?.backgroundColor = UIColor(red: 230/255, green: 244/255, blue: 242/255, alpha: 0.5)
+        }
+       
         if ( array[indexPath.row].count != 0){
             
             myCell?.textLabel!.text = array[indexPath.row][0]

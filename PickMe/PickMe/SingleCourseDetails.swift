@@ -23,7 +23,7 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: semesters[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        let attributedString = NSAttributedString(string: semesters[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.black])
         return attributedString
     }
     
@@ -165,10 +165,10 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 }
                 var recommend = map.sorted(by: {$0.value >= $1.value})
                 self.c_one.text = "None"
-                self.c_two.text = "None"
-                self.c_three.text = "None"
-                self.c_four.text = "None"
-                self.c_five.text = "None"
+                self.c_two.text = ""
+                self.c_three.text = ""
+                self.c_four.text = ""
+                self.c_five.text = ""
                 print("recommend \(recommend) => \(recommend.count)")
                 if recommend.count > 0 {
                     if recommend.count >= 1 {
@@ -209,11 +209,11 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
         menuButton.center = CGPoint(x: self.view.bounds.width - 32.0, y: self.view.bounds.height - 72.0)
         self.view.addSubview(menuButton)
         
-        let favor = ExpandingMenuItem(size: menuButtonSize, title: "Favor", image: UIImage(named: "heart")!, highlightedImage: UIImage(named: "heart-highlight")!, backgroundImage: UIImage(named: "chooser-moment-button"), backgroundHighlightedImage: UIImage(named: "chooser-moment-button-highlighted")) { () -> Void in
+        let favor = ExpandingMenuItem(size: menuButtonSize, title: "Mark", image: UIImage(named: "heart")!, highlightedImage: UIImage(named: "heart-highlight")!, backgroundImage: UIImage(named: "chooser-moment-button"), backgroundHighlightedImage: UIImage(named: "chooser-moment-button-highlighted")) { () -> Void in
             favorClass()
         }
         
-        let check = ExpandingMenuItem(size: menuButtonSize, title: "Check", image: UIImage(named: "check")!, highlightedImage: UIImage(named: "check-highlight")!, backgroundImage: UIImage(named: "chooser-moment-button"), backgroundHighlightedImage: UIImage(named: "chooser-moment-button-highlighted")) { () -> Void in
+        let check = ExpandingMenuItem(size: menuButtonSize, title: "Taken in Semester", image: UIImage(named: "check")!, highlightedImage: UIImage(named: "check-highlight")!, backgroundImage: UIImage(named: "chooser-moment-button"), backgroundHighlightedImage: UIImage(named: "chooser-moment-button-highlighted")) { () -> Void in
             checkClass()
         }
         

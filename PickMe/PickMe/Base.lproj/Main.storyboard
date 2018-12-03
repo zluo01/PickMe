@@ -137,7 +137,7 @@
                                 <rect key="frame" x="40" y="349" width="295" height="29"/>
                                 <segments>
                                     <segment title="Classes Taken"/>
-                                    <segment title="FavorClass"/>
+                                    <segment title="Marked Class"/>
                                 </segments>
                                 <color key="tintColor" red="0.00040330429328605533" green="0.40766206383705139" blue="0.39542841911315918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -334,7 +334,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.90057700870000001" green="0.95616525409999997" blue="0.94878917929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="oKJ-vM-166" secondAttribute="bottom" constant="184" placeholder="YES" id="7cv-MJ-mGz"/>
                                     <constraint firstAttribute="height" constant="218" id="Iex-dj-A70"/>
@@ -350,7 +350,6 @@
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKH-6F-YI9">
                                         <rect key="frame" x="0.0" y="0.0" width="298" height="156"/>
                                         <color key="backgroundColor" red="0.90625" green="0.90625" blue="0.90625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" red="0.00040330429328605533" green="0.40766206383705139" blue="0.39542841911315918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cKn-bm-bo3">
                                         <rect key="frame" x="8" y="156" width="298" height="30"/>
@@ -448,7 +447,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Related Course Recomendation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58B-As-YFZ">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Related Course Recommendation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58B-As-YFZ">
                                 <rect key="frame" x="16" y="459" width="239" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <nil key="textColor"/>
