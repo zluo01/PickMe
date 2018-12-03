@@ -82,6 +82,7 @@ PODS:
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - SwiftyPlistManager (1.0.2)
+  - TextFieldEffects (1.4.0)
 
 DEPENDENCIES:
   - ExpandingMenu (~> 0.4)
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/Storage
   - SwiftyPlistManager
+  - TextFieldEffects (~> 1.4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -112,6 +114,7 @@ SPEC REPOS:
     - nanopb
     - SDWebImage
     - SwiftyPlistManager
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   ExpandingMenu: 3187a4ed1aa1aea85418e444c213e4cd6063c122
@@ -131,7 +134,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftyPlistManager: 5895924cccb7fe28deccbe14890e8aed78ae78ae
+  TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 2f045bee253e752fcae4e4cd778b60d67ef7411f
+PODFILE CHECKSUM: 74c71454c44a4e91c661458a1275d2ffe62ba840
 
 COCOAPODS: 1.5.3
