@@ -54,7 +54,7 @@ class UserProfileViewController: UIViewController, UINavigationControllerDelegat
     }
     override func viewWillAppear(_ animated: Bool) {
         if Auth.auth().currentUser == nil {
-            userActionButton.title = "Login"
+            userActionButton.title = "Login/Register"
         } else { // Todo double check here
             userActionButton.title = "Log out"
         }

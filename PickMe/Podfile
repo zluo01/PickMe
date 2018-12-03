@@ -14,7 +14,7 @@ target 'PickMe' do
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'
-  
+  pod 'TextFieldEffects', '~> 1.4.0'
   target 'PickMeTests' do
     inherit! :search_paths
     # Pods for testing
