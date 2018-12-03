@@ -32,7 +32,7 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @IBOutlet weak var courseId: UILabel!
-    @IBOutlet weak var courseTitle: UILabel!
+    //@IBOutlet weak var courseTitle: UILabel!
     @IBOutlet weak var courseDes: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -149,10 +149,10 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 var map = [String : Int]()
                 for (_ , value) in ((snapshot.value as! Dictionary<String, Any>) as! Dictionary<String, Dictionary<String, Any>>) {
                     let courses = value["taken"] as! Dictionary<String, String>
-                    if (courses.values.contains(self.courseId.text!)) {
-                        for i in self.getSemester(courses, self.courseId.text!) {
+                    if (courses.values.contains(self.navCourseID.title!)) {
+                        for i in self.getSemester(courses, self.navCourseID.title!) {
                             for s in courses.keys {
-                                if String(s[...0]) == i && courses[s]! != self.courseId.text!{
+                                if String(s[...0]) == i && courses[s]! != self.navCourseID.title!{
                                     if map.keys.contains(courses[s]!) {
                                         map.updateValue(map[courses[s]!]! + 1, forKey: courses[s]!)
                                     } else {
