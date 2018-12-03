@@ -39,6 +39,7 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var PickView: UIView!
     @IBOutlet weak var picker: UIPickerView!
     
+    @IBOutlet var navCourseID: UINavigationItem!
     @IBOutlet weak var c_one: UILabel!
     @IBOutlet weak var c_two: UILabel!
     @IBOutlet weak var c_three: UILabel!
@@ -55,12 +56,14 @@ class SingleCourseDetails: UIViewController, UIPickerViewDelegate, UIPickerViewD
         PickView.isHidden = true
         
         // Do any additional setup after loading the view.
-        courseId.text = details["course_code"]
-        courseTitle.text = details["title"]
+        courseId.text = details["title"]
+        //courseTitle.text = details["title"]
+        navCourseID.title = details["course_code"]
         courseDes.text = details["description"]
         
         courseId.sizeToFit()
-        courseTitle.sizeToFit()
+        //courseTitle.sizeToFit()
+        
         courseDes.sizeToFit()
         
         // UIPickerView
